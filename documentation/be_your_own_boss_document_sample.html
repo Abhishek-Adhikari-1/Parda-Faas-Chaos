@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Be Your Own Boss Report - StyleStreak</title>
+<style>
+  :root {
+    --ink: #1c1c1c;
+    --muted: #555;
+    --line: #cfcfcf;
+    --accent: #7a4f9e;
+    --soft: #f6f3f9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--ink);
+    line-height: 1.65;
+    margin: 0;
+    background: #fff;
+  }
+  .page { max-width: 880px; margin: 0 auto; padding: 48px 56px; }
+  h1, h2, h3 { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.25; }
+  h2 {
+    font-size: 1.35rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 6px;
+    margin-top: 42px;
+  }
+  h3 { font-size: 1.08rem; margin-top: 28px; color: var(--accent); }
+  p { margin: 14px 0; text-align: justify; }
+  .cover {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+  }
+  .cover .module {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .cover h1 { font-size: 2.6rem; margin: 14px 0 6px; }
+  .cover .sub { font-style: italic; color: var(--muted); font-size: 1.15rem; }
+  .cover .meta {
+    margin-top: 40px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 0.95rem;
+  }
+  .cover .meta table { margin: 0 auto; border-collapse: collapse; }
+  .cover .meta td { padding: 4px 10px; text-align: left; }
+  .cover .meta td:first-child { color: var(--muted); text-align: right; }
+  .abstract {
+    background: var(--soft);
+    border-left: 4px solid var(--accent);
+    padding: 16px 22px;
+    margin: 24px 0;
+  }
+  .keywords { font-family: 'Segoe UI', Arial, sans-serif; font-size: 0.92rem; }
+  .keywords span {
+    display: inline-block;
+    background: var(--soft);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 3px 9px;
+    margin: 3px 4px 3px 0;
+  }
+  table.data {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 0.92rem;
+    margin: 18px 0;
+  }
+  table.data th, table.data td {
+    border: 1px solid var(--line);
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  table.data th { background: var(--accent); color: #fff; }
+  table.data tr:nth-child(even) td { background: var(--soft); }
+  table.data td.num { text-align: right; }
+  .toc ol { font-family: 'Segoe UI', Arial, sans-serif; line-height: 2; }
+  figure { margin: 26px 0; text-align: center; }
+  figure svg { max-width: 100%; height: auto; border: 1px solid var(--line); background: #fff; }
+  figcaption {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+  .pagebreak { border: 0; border-top: 1px dashed var(--line); margin: 40px 0; }
+  @media print { .page { padding: 0; max-width: 100%; } .cover { min-height: 96vh; } }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<section class="page cover">
+  <div class="module">Be Your Own Boss Module</div>
+  <h1>StyleStreak</h1>
+  <div class="sub">A Business Case for Making Money from a Simple Game</div>
+  <div class="meta">
+    <table>
+      <tr><td>Group:</td><td>Group 7</td></tr>
+      <tr><td>Members:</td><td>[Name 1], [Name 2], [Name 3], [Name 4]</td></tr>
+      <tr><td>Programme:</td><td>BSc Artificial Intelligence</td></tr>
+      <tr><td>Module Code:</td><td>BYOB-302</td></tr>
+      <tr><td>Submission Date:</td><td>[Insert Date]</td></tr>
+      <tr><td>Word Count:</td><td>[Insert Count]</td></tr>
+    </table>
+  </div>
+</section>
+
+<div class="page">
+
+<!-- EXECUTIVE SUMMARY -->
+<h2>Executive Summary</h2>
+<div class="abstract">
+<p>This report sets out how money could be made from StyleStreak, the simple styling game that was built for the Enterprise Project module. The engagement that the game produces is treated here as a business asset, since players who return every day are players who can be earned from. A freemium model was selected, in which the game is free to download and income is earned through small in-app purchases and through advertising. The target market was studied, the main groups of likely players were described, and a marketing plan was set out to reach them.</p>
+<p>A simple breakdown of the launch cost was prepared, and a basic revenue projection was made so that a point of break-even could be estimated. The figures in this report are illustrative and are meant to show that the thinking is sound rather than to promise an exact result. It is stated honestly that the same mechanics that make the game profitable are the ones that raise ethical questions, and these questions are addressed near the end of the report rather than being left out.</p>
+</div>
+
+<!-- KEYWORDS -->
+<h2>Keywords</h2>
+<p class="keywords">
+<span>Freemium</span><span>In-App Purchase</span><span>Monetisation</span>
+<span>Target Demographics</span><span>Marketing Strategy</span><span>Launch Cost</span>
+<span>Break-even</span><span>Retention Value</span><span>Mobile Game Business</span>
+</p>
+
+<!-- TABLE OF CONTENTS -->
+<h2>Table of Contents</h2>
+<div class="toc">
+<ol>
+  <li>Introduction</li>
+  <li>Motivation</li>
+  <li>Aim and Objectives</li>
+  <li>The Product</li>
+  <li>Business Model and Monetisation</li>
+  <li>Target Market and Demographics</li>
+  <li>Marketing Strategy</li>
+  <li>Launch Cost Breakdown</li>
+  <li>Revenue Projection and Break-even</li>
+  <li>Risks and Ethics</li>
+  <li>Division of Work</li>
+  <li>Project Plan</li>
+  <li>Conclusion</li>
+  <li>References</li>
+</ol>
+</div>
+
+<!-- TABLE OF FIGURES -->
+<h2>Table of Figures</h2>
+<div class="toc">
+<ol>
+  <li>Figure 1. Target audience by age group</li>
+  <li>Figure 2. The revenue streams of StyleStreak</li>
+  <li>Figure 3. Launch cost breakdown</li>
+  <li>Figure 4. Revenue against cost and the break-even point</li>
+  <li>Figure 5. Project plan for the launch</li>
+</ol>
+</div>
+
+<hr class="pagebreak">
+
+<!-- 1 INTRODUCTION -->
+<h2>1. Introduction</h2>
+<p>A game that holds attention is a game that can earn money, and this report is concerned with how that earning would be done. The game in question is StyleStreak, which was described in full in the Enterprise Project report. There the focus was placed on how engagement is produced. Here the focus is placed on how that engagement is turned into income. The two reports are linked closely, because the business model below would not work without the daily return that the gamification layer creates.</p>
+<p>It should be said at the start that the numbers used in this report are illustrative. Real figures would be gathered from a soft launch in a small market before any large spend was made. The purpose of the report is to show that a sound plan has been formed, that the costs have been thought through, and that a path to break-even can be drawn.</p>
+
+<!-- 2 MOTIVATION -->
+<h2>2. Motivation</h2>
+<p>The group was motivated by the wish to understand the full path from an idea to a product that earns. Many students can build a small app, but far fewer can explain how that app would pay for itself. By working through the business side, the group aimed to learn how a market is sized, how a price is set, and how a launch budget is planned. The styling game was used as the test case because it already existed and because its daily nature suits the freemium model well.</p>
+
+<!-- 3 AIM AND OBJECTIVES -->
+<h2>3. Aim and Objectives</h2>
+<p>The aim of this report is to set out a clear and honest business case for earning money from StyleStreak.</p>
+<table class="data">
+  <tr><th>No.</th><th>Objective</th></tr>
+  <tr><td>O1</td><td>A suitable business model is to be selected and justified.</td></tr>
+  <tr><td>O2</td><td>The target market is to be described and broken down by demographic.</td></tr>
+  <tr><td>O3</td><td>A marketing plan is to be set out to reach the target market.</td></tr>
+  <tr><td>O4</td><td>A simple launch cost breakdown is to be prepared.</td></tr>
+  <tr><td>O5</td><td>A revenue projection and a break-even point are to be estimated.</td></tr>
+  <tr><td>O6</td><td>The risks and the ethics of the model are to be discussed.</td></tr>
+</table>
+
+<!-- 4 THE PRODUCT -->
+<h2>4. The Product</h2>
+<p>StyleStreak is a free daily styling game for mobile phones. A player is given a styling challenge each day, an outfit is built by tapping items onto an avatar, and points are earned. A streak rewards daily return, leaderboards add competition, and limited time items add urgency. The game was kept small and is easy to run, which keeps the running cost low. From a business view, the most valuable feature of the product is its daily habit, because a player who opens the app every day can be shown offers and adverts every day.</p>
+
+<!-- 5 BUSINESS MODEL -->
+<h2>5. Business Model and Monetisation</h2>
+<p>A freemium model was selected. The game is free to download, which keeps the barrier to entry as low as possible, and income is then earned from a small share of players who choose to spend. This model fits the mobile market well, since most mobile players never pay, yet a small group of regular spenders can carry the income for the whole game. Three streams of income were planned, and they are shown in Figure 2.</p>
+<p>The first stream is in-app purchases, through which players buy coins, premium outfit packs, or a streak shield that protects a streak for one missed day. The streak shield is expected to sell well, because it is bought out of the same loss aversion that the streak creates. The second stream is advertising, through which short adverts are shown between rounds, with an option to remove them for a one-off payment. The third stream is a subscription, through which a monthly fee unlocks daily bonus items and an advert free experience.</p>
+<figure>
+<svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" font-size="13">
+  <g>
+    <rect x="280" y="110" width="160" height="60" rx="8" fill="#7a4f9e"/>
+    <text x="360" y="138" text-anchor="middle" fill="#fff">StyleStreak</text>
+    <text x="360" y="156" text-anchor="middle" fill="#fff">revenue</text>
+
+    <rect x="40" y="30" width="190" height="56" rx="8" fill="#f6f3f9" stroke="#7a4f9e"/>
+    <text x="135" y="54" text-anchor="middle">In-app purchases</text>
+    <text x="135" y="72" text-anchor="middle" font-size="11">coins, packs, streak shield</text>
+
+    <rect x="40" y="190" width="190" height="56" rx="8" fill="#f6f3f9" stroke="#7a4f9e"/>
+    <text x="135" y="214" text-anchor="middle">Advertising</text>
+    <text x="135" y="232" text-anchor="middle" font-size="11">adverts between rounds</text>
+
+    <rect x="490" y="110" width="190" height="60" rx="8" fill="#f6f3f9" stroke="#7a4f9e"/>
+    <text x="585" y="134" text-anchor="middle">Subscription</text>
+    <text x="585" y="152" text-anchor="middle" font-size="11">monthly, advert free</text>
+
+    <line x1="230" y1="58" x2="285" y2="120" stroke="#7a4f9e"/>
+    <line x1="230" y1="218" x2="285" y2="160" stroke="#7a4f9e"/>
+    <line x1="440" y1="140" x2="488" y2="140" stroke="#7a4f9e"/>
+  </g>
+</svg>
+<figcaption>Figure 2. The three revenue streams that feed the freemium model.</figcaption>
+</figure>
+
+<!-- 6 TARGET MARKET -->
+<h2>6. Target Market and Demographics</h2>
+<p>The target market is made up of casual mobile players who enjoy fashion, styling, and light competition. The largest group is expected to be young adults between eighteen and thirty four, since this group plays casual mobile games heavily and follows fashion trends online. A second group of teenagers is expected, although care must be taken here because younger players raise extra duties around spending and data, and these are noted in the risks section. A smaller group of older players is also expected, drawn by the simple and calm nature of the game.</p>
+<p>The audience is mostly, though not only, female, and it is reached most easily through visual social platforms where styling content already does well. The breakdown by age that the plan assumes is shown in Figure 1. These shares are an estimate based on the general shape of the casual mobile market and would be checked against real install data after launch.</p>
+<figure>
+<svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" font-size="13">
+  <g>
+    <line x1="80" y1="30" x2="80" y2="230" stroke="#1c1c1c"/>
+    <line x1="80" y1="230" x2="680" y2="230" stroke="#1c1c1c"/>
+    <text x="25" y="130" transform="rotate(-90 25 130)" text-anchor="middle">Share of players</text>
+
+    <rect x="130" y="150" width="90" height="80" fill="#7a4f9e"/>
+    <text x="175" y="248" text-anchor="middle">13 to 17</text>
+    <text x="175" y="142" text-anchor="middle" font-size="12">20%</text>
+
+    <rect x="270" y="60" width="90" height="170" fill="#7a4f9e"/>
+    <text x="315" y="248" text-anchor="middle">18 to 24</text>
+    <text x="315" y="52" text-anchor="middle" font-size="12">42%</text>
+
+    <rect x="410" y="120" width="90" height="110" fill="#7a4f9e"/>
+    <text x="455" y="248" text-anchor="middle">25 to 34</text>
+    <text x="455" y="112" text-anchor="middle" font-size="12">27%</text>
+
+    <rect x="550" y="190" width="90" height="40" fill="#7a4f9e"/>
+    <text x="595" y="248" text-anchor="middle">35+</text>
+    <text x="595" y="182" text-anchor="middle" font-size="12">11%</text>
+  </g>
+</svg>
+<figcaption>Figure 1. Assumed target audience by age group. Shares are illustrative and would be confirmed after launch.</figcaption>
+</figure>
+
+<!-- 7 MARKETING STRATEGY -->
+<h2>7. Marketing Strategy</h2>
+<p>The marketing plan was built around the platforms where the target audience already spends time. Short video clips of dramatic outfit changes were planned for visual social platforms, since this kind of content is shared easily and costs little to make. Small partnerships with fashion focused creators were planned so that the game could be shown to an audience that already trusts the creator. A modest budget for paid installs was set aside so that early numbers could be lifted while the organic content gained pace.</p>
+<p>The streak mechanic was also planned to act as its own marketing, because players were given a small reward for inviting a friend, which turns the existing players into a channel of their own. The plan was kept lean on purpose, since a large marketing spend before the game has proven its retention would be a poor use of money. The aim of the early period is to learn, not to grow at any cost.</p>
+
+<!-- 8 LAUNCH COST -->
+<h2>8. Launch Cost Breakdown</h2>
+<p>A simple breakdown of the launch cost was prepared and is shown in the table and the chart below. The costs were kept low because the game is small and because the group can carry out much of the work itself. The largest single item is the marketing budget, which reflects the need to bring in a first wave of players. The figures are estimates in pounds and would be revised once real quotes were obtained.</p>
+<table class="data">
+  <tr><th>Item</th><th>Note</th><th>Estimated cost</th></tr>
+  <tr><td>Developer accounts</td><td>App store and play store registration</td><td class="num">120</td></tr>
+  <tr><td>Art and assets</td><td>Avatar and item artwork</td><td class="num">600</td></tr>
+  <tr><td>Hosting and backend</td><td>First six months of servers</td><td class="num">450</td></tr>
+  <tr><td>Marketing</td><td>Paid installs and creator partnerships</td><td class="num">2,500</td></tr>
+  <tr><td>Legal and policy</td><td>Privacy policy and terms</td><td class="num">400</td></tr>
+  <tr><td>Contingency</td><td>Reserve for the unexpected</td><td class="num">430</td></tr>
+  <tr><td><strong>Total</strong></td><td></td><td class="num"><strong>4,500</strong></td></tr>
+</table>
+<figure>
+<svg viewBox="0 0 720 290" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+  <g>
+    <line x1="90" y1="20" x2="90" y2="240" stroke="#1c1c1c"/>
+    <line x1="90" y1="240" x2="690" y2="240" stroke="#1c1c1c"/>
+
+    <rect x="110" y="232" width="70" height="8" fill="#7a4f9e"/>
+    <text x="145" y="258" text-anchor="middle">Accounts</text>
+    <text x="145" y="226" text-anchor="middle" font-size="11">120</text>
+
+    <rect x="210" y="200" width="70" height="40" fill="#7a4f9e"/>
+    <text x="245" y="258" text-anchor="middle">Art</text>
+    <text x="245" y="194" text-anchor="middle" font-size="11">600</text>
+
+    <rect x="310" y="210" width="70" height="30" fill="#7a4f9e"/>
+    <text x="345" y="258" text-anchor="middle">Hosting</text>
+    <text x="345" y="204" text-anchor="middle" font-size="11">450</text>
+
+    <rect x="410" y="73" width="70" height="167" fill="#7a4f9e"/>
+    <text x="445" y="258" text-anchor="middle">Marketing</text>
+    <text x="445" y="67" text-anchor="middle" font-size="11">2,500</text>
+
+    <rect x="510" y="213" width="70" height="27" fill="#7a4f9e"/>
+    <text x="545" y="258" text-anchor="middle">Legal</text>
+    <text x="545" y="207" text-anchor="middle" font-size="11">400</text>
+
+    <rect x="610" y="211" width="70" height="29" fill="#7a4f9e"/>
+    <text x="645" y="258" text-anchor="middle">Reserve</text>
+    <text x="645" y="205" text-anchor="middle" font-size="11">430</text>
+  </g>
+</svg>
+<figcaption>Figure 3. Launch cost breakdown in pounds. Marketing is the largest single item.</figcaption>
+</figure>
+
+<!-- 9 REVENUE AND BREAK-EVEN -->
+<h2>9. Revenue Projection and Break-even</h2>
+<p>A simple revenue projection was built on a small set of assumptions. It was assumed that a starting base of players is reached after launch, that a small share of them return each day, and that an even smaller share spend money or generate advert income. From these assumptions a figure for average revenue per daily player was estimated, and this was multiplied by the number of returning players each month. The projection is deliberately cautious, since it is safer to plan for slow growth than to assume success.</p>
+<p>The result is shown in Figure 4, where monthly revenue is plotted against the total cost. The point at which the rising revenue line crosses the cost line is the break-even point, and on these assumptions it is reached at around month five. After that point the game is expected to earn more than it costs to run, although any spend on further marketing would push the point later in exchange for faster growth. It is stressed once more that these are planning figures and not a promise.</p>
+<figure>
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" font-size="13">
+  <g>
+    <line x1="80" y1="30" x2="80" y2="250" stroke="#1c1c1c"/>
+    <line x1="80" y1="250" x2="680" y2="250" stroke="#1c1c1c"/>
+    <text x="25" y="140" transform="rotate(-90 25 140)" text-anchor="middle">Pounds (cumulative)</text>
+    <text x="380" y="288" text-anchor="middle">Month after launch</text>
+
+    <text x="80" y="270" text-anchor="middle">0</text>
+    <text x="200" y="270" text-anchor="middle">2</text>
+    <text x="320" y="270" text-anchor="middle">4</text>
+    <text x="440" y="270" text-anchor="middle">6</text>
+    <text x="560" y="270" text-anchor="middle">8</text>
+    <text x="680" y="270" text-anchor="middle">10</text>
+
+    <line x1="80" y1="120" x2="680" y2="120" stroke="#7a7a7a" stroke-dasharray="6 4"/>
+    <text x="610" y="112" font-size="11" fill="#7a7a7a">Total cost (4,500)</text>
+
+    <polyline points="80,240 200,225 320,180 440,110 560,55 680,30" fill="none" stroke="#7a4f9e" stroke-width="2.5"/>
+    <text x="560" y="48" font-size="11" fill="#7a4f9e">Cumulative revenue</text>
+
+    <circle cx="376" cy="120" r="6" fill="#b0413e"/>
+    <text x="376" y="150" text-anchor="middle" font-size="11" fill="#b0413e">Break-even, around month 5</text>
+  </g>
+</svg>
+<figcaption>Figure 4. Cumulative revenue against total cost, with the estimated break-even point. Values are illustrative.</figcaption>
+</figure>
+
+<!-- 10 RISKS AND ETHICS -->
+<h2>10. Risks and Ethics</h2>
+<p>Several risks were identified. The largest is that retention falls below the level assumed, in which case the revenue line would rise more slowly and break-even would be pushed back or missed. A second risk is that the marketing spend fails to bring in players at a reasonable cost, which is why the early spend was kept small. A third risk is that the app stores change their rules or their fees, which sits outside the control of the group.</p>
+<p>An ethical risk must also be stated plainly, since it would be dishonest to leave it out. The mechanics that drive both engagement and income work by acting on human biases, and the streak shield in particular earns money from the very anxiety that the streak was designed to create. This raises a fair question about whether the model profits from a weakness rather than from value given. Younger players make the question sharper still. The position taken by the group is that the mechanics should be used in a measured way, that spending should be capped and clearly shown, and that the player should always be able to step away without losing anything that was paid for. These limits reduce the profit, and that trade was accepted as the right one.</p>
+
+<!-- 11 DIVISION OF WORK -->
+<h2>11. Division of Work</h2>
+<p>The work on this report was shared across the same group of four, with each member leading the area that matched their strength while the writing and the figures were checked together. The division is shown below.</p>
+<table class="data">
+  <tr><th>Member</th><th>Main responsibility</th><th>Shared tasks</th></tr>
+  <tr><td>[Name 1]</td><td>Business model and revenue streams</td><td>Report sections 4 and 5</td></tr>
+  <tr><td>[Name 2]</td><td>Market research and demographics</td><td>Report sections 6 and 7</td></tr>
+  <tr><td>[Name 3]</td><td>Cost breakdown and the charts</td><td>Figures 3 and 4, formatting</td></tr>
+  <tr><td>[Name 4]</td><td>Risks, ethics, and project management</td><td>Sections 1 to 3, references</td></tr>
+</table>
+
+<!-- 12 PROJECT PLAN -->
+<h2>12. Project Plan</h2>
+<p>The launch was planned across a six month period that begins after the game is built. The plan is shown in Figure 5. A soft launch in a small market was placed first so that real data could be gathered, the main marketing push was placed once retention had been checked, and a review point was set at the expected break-even so that the plan could be judged against the real numbers.</p>
+<figure>
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+  <g>
+    <line x1="220" y1="30" x2="220" y2="270" stroke="#cfcfcf"/>
+    <line x1="295" y1="30" x2="295" y2="270" stroke="#eee"/>
+    <line x1="370" y1="30" x2="370" y2="270" stroke="#eee"/>
+    <line x1="445" y1="30" x2="445" y2="270" stroke="#eee"/>
+    <line x1="520" y1="30" x2="520" y2="270" stroke="#eee"/>
+    <line x1="595" y1="30" x2="595" y2="270" stroke="#eee"/>
+    <line x1="670" y1="30" x2="670" y2="270" stroke="#eee"/>
+    <text x="220" y="22" text-anchor="middle">M1</text>
+    <text x="295" y="22" text-anchor="middle">M2</text>
+    <text x="370" y="22" text-anchor="middle">M3</text>
+    <text x="445" y="22" text-anchor="middle">M4</text>
+    <text x="520" y="22" text-anchor="middle">M5</text>
+    <text x="595" y="22" text-anchor="middle">M6</text>
+
+    <text x="10" y="55">Soft launch</text>
+    <rect x="220" y="44" width="75" height="16" fill="#7a4f9e"/>
+    <text x="10" y="90">Gather data</text>
+    <rect x="220" y="79" width="150" height="16" fill="#7a4f9e"/>
+    <text x="10" y="125">Tune the game</text>
+    <rect x="295" y="114" width="150" height="16" fill="#7a4f9e"/>
+    <text x="10" y="160">Main marketing push</text>
+    <rect x="370" y="149" width="225" height="16" fill="#b0413e"/>
+    <text x="10" y="195">Add subscription</text>
+    <rect x="445" y="184" width="75" height="16" fill="#7a7a7a"/>
+    <text x="10" y="230">Review at break-even</text>
+    <rect x="520" y="219" width="75" height="16" fill="#7a7a7a"/>
+  </g>
+</svg>
+<figcaption>Figure 5. Project plan for the launch across six months.</figcaption>
+</figure>
+
+<!-- 13 CONCLUSION -->
+<h2>13. Conclusion</h2>
+<p>A business case for StyleStreak was set out, in which the daily engagement built in the Enterprise Project is turned into income through a freemium model. The target market was described, a lean marketing plan was formed, the launch cost was broken down, and a cautious revenue projection placed break-even at around month five. The risks were named, and the ethical cost of earning money from human bias was faced rather than hidden. The conclusion drawn by the group is that the game could be made to pay for itself on reasonable assumptions, provided that the mechanics are used with restraint and that the player is always treated fairly.</p>
+
+<!-- 14 REFERENCES -->
+<h2>14. References</h2>
+<p style="font-family:'Segoe UI',Arial,sans-serif;font-size:0.9rem;">
+Osterwalder, A. and Pigneur, Y. (2010) Business Model Generation. Wiley.<br><br>
+Ries, E. (2011) The Lean Startup. Crown Business.<br><br>
+Zichermann, G. and Cunningham, C. (2011) Gamification by Design. O'Reilly Media.<br><br>
+[Add market reports and any cost quotes used by the group in the agreed citation style.]
+</p>
+
+</div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"f68081eec08b4f8bab849349d561a87c","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

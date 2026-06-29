@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Be Your Own Boss Report - Parda Faas</title>
+<style>
+  :root {
+    --ink: #1c1c1c;
+    --muted: #555;
+    --line: #cfcfcf;
+    --accent: #c0392b;
+    --accent2: #ff6b00;
+    --soft: #fdf5f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--ink);
+    line-height: 1.65;
+    margin: 0;
+    background: #fff;
+  }
+  .page { max-width: 880px; margin: 0 auto; padding: 48px 56px; }
+  h1, h2, h3 { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.25; }
+  h2 {
+    font-size: 1.35rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 6px;
+    margin-top: 42px;
+  }
+  h3 { font-size: 1.08rem; margin-top: 28px; color: var(--accent); }
+  p { margin: 14px 0; text-align: justify; }
+  .cover {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+  }
+  .cover .module {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .cover h1 { font-size: 2.6rem; margin: 14px 0 4px; }
+  .cover .nepali { font-size: 1.5rem; color: var(--accent); margin: 0 0 8px; font-family: 'Segoe UI', Arial, sans-serif; }
+  .cover .sub { font-style: italic; color: var(--muted); font-size: 1.15rem; }
+  .cover .meta {
+    margin-top: 40px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 0.95rem;
+  }
+  .cover .meta table { margin: 0 auto; border-collapse: collapse; }
+  .cover .meta td { padding: 4px 10px; text-align: left; }
+  .cover .meta td:first-child { color: var(--muted); text-align: right; }
+  .abstract {
+    background: var(--soft);
+    border-left: 4px solid var(--accent);
+    padding: 16px 22px;
+    margin: 24px 0;
+  }
+  .keywords { font-family: 'Segoe UI', Arial, sans-serif; font-size: 0.92rem; }
+  .keywords span {
+    display: inline-block;
+    background: var(--soft);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 3px 9px;
+    margin: 3px 4px 3px 0;
+  }
+  table.data {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 0.92rem;
+    margin: 18px 0;
+  }
+  table.data th, table.data td {
+    border: 1px solid var(--line);
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  table.data th { background: var(--accent); color: #fff; }
+  table.data tr:nth-child(even) td { background: var(--soft); }
+  table.data td.num { text-align: right; font-family: 'Segoe UI', Arial, sans-serif; }
+  .toc ol { font-family: 'Segoe UI', Arial, sans-serif; line-height: 2; }
+  figure { margin: 26px 0; text-align: center; }
+  figure svg { max-width: 100%; height: auto; border: 1px solid var(--line); background: #fff; }
+  figcaption {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+  .pagebreak { border: 0; border-top: 1px dashed var(--line); margin: 40px 0; }
+  @media print { .page { padding: 0; max-width: 100%; } .cover { min-height: 96vh; } }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     COVER PAGE
+═══════════════════════════════════════════════════════════ -->
+<section class="page cover">
+  <div class="module">Be Your Own Boss Module</div>
+  <h1>Parda Faas</h1>
+  <div class="nepali">पर्दाफास</div>
+  <div class="sub">A Business Case for Turning a Civic Investigation Game into a Sustainable Product</div>
+  <div class="meta">
+    <table>
+      <tr><td>Group:</td><td>Group [Insert Group No.]</td></tr>
+      <tr><td>Members:</td><td>Abhishek Adhikari, Bishrut Dhwoju, Sagar Bajgain, Sanjit Hyanju</td></tr>
+      <tr><td>Programme:</td><td>BSc (Hons) Computing / Artificial Intelligence</td></tr>
+      <tr><td>Module Code:</td><td>BYOB-302</td></tr>
+      <tr><td>Submission Date:</td><td>[Insert Date]</td></tr>
+      <tr><td>Word Count:</td><td>[Insert Count]</td></tr>
+    </table>
+  </div>
+</section>
+
+<div class="page">
+
+<!-- ═══════════════════════════════════════════════════════════
+     EXECUTIVE SUMMARY
+═══════════════════════════════════════════════════════════ -->
+<h2>Executive Summary</h2>
+<div class="abstract">
+<p>This report sets out a business case for turning Parda Faas (पर्दाफास), the civic investigation platformer built for the Enterprise Project module, into a product that earns money. The engagement that the game produces through its gamification layer is treated here as a commercial asset. A freemium model was selected as the most appropriate structure for a browser-based product targeting Nepali young adults and the wider South Asian diaspora. Revenue would be earned through three streams: a voluntary supporter subscription, civic-mission-aligned in-game purchases, and carefully placed advertising that does not break the play experience.</p>
+<p>The target market was studied, three distinct player groups were identified, and a lean marketing plan was built around the platforms where those groups are already active. A launch cost breakdown was prepared and kept deliberately modest, with the largest single item being the marketing and community-building spend. A cautious revenue projection places break-even at approximately month six after public launch. The ethical complications of earning money from a game that also teaches civic values are addressed directly rather than being postponed, because they bear on every decision in the model.</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     KEYWORDS
+═══════════════════════════════════════════════════════════ -->
+<h2>Keywords</h2>
+<p class="keywords">
+<span>Freemium</span><span>Civic Tech</span><span>Browser Game</span>
+<span>Monetisation</span><span>Nepal Market</span><span>South Asian Diaspora</span>
+<span>In-App Purchase</span><span>Supporter Subscription</span><span>Marketing Strategy</span>
+<span>Break-even Analysis</span><span>Ethical Design</span><span>Launch Cost</span>
+</p>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TABLE OF CONTENTS
+═══════════════════════════════════════════════════════════ -->
+<h2>Table of Contents</h2>
+<div class="toc">
+<ol>
+  <li>Introduction</li>
+  <li>Motivation</li>
+  <li>Aim and Objectives</li>
+  <li>The Product</li>
+  <li>Business Model and Monetisation</li>
+  <li>Target Market and Demographics</li>
+  <li>Marketing Strategy</li>
+  <li>Launch Cost Breakdown</li>
+  <li>Revenue Projection and Break-even</li>
+  <li>Risks and Ethics</li>
+  <li>Division of Work</li>
+  <li>Project Plan</li>
+  <li>Conclusion</li>
+  <li>References</li>
+</ol>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TABLE OF FIGURES
+═══════════════════════════════════════════════════════════ -->
+<h2>Table of Figures</h2>
+<div class="toc">
+<ol>
+  <li>Figure 1. Target audience breakdown by player group</li>
+  <li>Figure 2. The three revenue streams of Parda Faas</li>
+  <li>Figure 3. Launch cost breakdown in NPR</li>
+  <li>Figure 4. Cumulative revenue against cost and the break-even point</li>
+  <li>Figure 5. Post-launch plan across six months</li>
+</ol>
+</div>
+
+<hr class="pagebreak">
+
+<!-- ═══════════════════════════════════════════════════════════
+     1. INTRODUCTION
+═══════════════════════════════════════════════════════════ -->
+<h2>1. Introduction</h2>
+<p>A game that holds attention every day is a game that can be built into a business, and this report sets out how that would be done for Parda Faas. The game was described in full in the Enterprise Project report, where the focus was placed on how its gamification layer produces engagement. Here the focus shifts to what that engagement is worth and how it can be turned into a product that pays for itself and then earns beyond its costs.</p>
+<p>Parda Faas occupies a position that few browser games hold. It is, at the same time, a game, a civic education tool, and a form of investigative satire. That combination is commercially unusual and creates both advantages and complications. The advantages are that the game carries inherent social value, which makes it easier to talk about and to fund through non-commercial sources as well as commercial ones. The complications are that the same mechanics that create engagement also raise ethical questions when money is attached to them, and those questions are given space in this report rather than being minimised.</p>
+<p>As with the Enterprise Project report, the figures used here are illustrative. They are built on stated assumptions, and those assumptions are exposed rather than hidden so that the reasoning can be evaluated on its own terms.</p>
+
+<!-- ═══════════════════════════════════════════════════════════
+     2. MOTIVATION
+═══════════════════════════════════════════════════════════ -->
+<h2>2. Motivation</h2>
+<p>The group was motivated by a practical question: how does a project with civic purpose survive beyond its first funding? Nepal has no shortage of applications, websites, and community campaigns that address corruption and accountability. Most of them run for a year or two and then disappear because there is no income to sustain the people working on them. Parda Faas was designed from the start with this problem in mind, and the business model in this report is a direct response to it. A product that earns its own way does not depend on grant cycles or political goodwill to continue existing.</p>
+<p>A second motivation came from the specific shape of the game's audience. Young people between eighteen and twenty-eight in Nepal and in the Nepali diaspora are among the most active mobile and browser game players in the region, and they are also the group most likely to discuss politics online. A game that sits at the intersection of those two habits occupies a commercially interesting position, and working out what that position is worth was judged to be a useful exercise in its own right.</p>
+
+<!-- ═══════════════════════════════════════════════════════════
+     3. AIM AND OBJECTIVES
+═══════════════════════════════════════════════════════════ -->
+<h2>3. Aim and Objectives</h2>
+<p>The aim of this report is to set out a clear, honest, and achievable business case for making Parda Faas financially sustainable after launch.</p>
+<table class="data">
+  <tr><th>No.</th><th>Objective</th></tr>
+  <tr><td>O1</td><td>A business model suited to a civic browser game is to be selected and justified.</td></tr>
+  <tr><td>O2</td><td>The target market is to be described and broken down into distinct player groups by demographic and motivation.</td></tr>
+  <tr><td>O3</td><td>A lean marketing plan is to be set out to reach the target market at low initial cost.</td></tr>
+  <tr><td>O4</td><td>A launch cost breakdown is to be prepared in Nepali Rupees with each item explained.</td></tr>
+  <tr><td>O5</td><td>A revenue projection and an estimated break-even point are to be produced from stated assumptions.</td></tr>
+  <tr><td>O6</td><td>The financial, legal, and ethical risks of the model are to be named and addressed.</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════════
+     4. THE PRODUCT
+═══════════════════════════════════════════════════════════ -->
+<h2>4. The Product</h2>
+<p>Parda Faas is a browser-based, keyboard-controlled civic investigation platformer. The player chooses one of seven investigator characters, each modelled as a satirical caricature of a real Nepali public figure. They move through a level representing a tier of Nepal's governance, collecting evidence, talking to witness NPCs, rejecting bribe offers, and eventually publishing a newspaper exposé. There are five levels of increasing difficulty, from a ward councillor's ghost project at the easiest end to a federal cabinet minister at the hardest. The game runs in any modern browser without installation, which removes the single largest friction point for a new player trying the product for the first time.</p>
+<p>From a commercial perspective, the most valuable feature of the product is the daily return habit that the gamification layer creates. The streak mechanic, the rank progression system, and the timed case files all work to bring a player back the following day. A player who returns daily is a player who can be offered something every day, and the business model is built on that fact. The civic subject matter adds a second layer of commercial value: partnerships with journalism schools, civil society organisations, and government transparency initiatives are plausible in a way that would not apply to a generic platformer, and these open funding channels that do not exist for most small games.</p>
+
+<!-- ═══════════════════════════════════════════════════════════
+     5. BUSINESS MODEL AND MONETISATION
+═══════════════════════════════════════════════════════════ -->
+<h2>5. Business Model and Monetisation</h2>
+<p>A freemium model was selected. The game is free to access and free to play in its entirety, which keeps the barrier to entry at zero. Income is earned from players who choose to pay and from advertising shown to players who do not. This model fits the target audience well: young adults in Nepal and the South Asian diaspora are familiar with freemium products, and the audience size is large enough that even a small spending rate across a large number of players produces useful income.</p>
+<p>Three revenue streams were planned, and they are shown in Figure 2. The first is a voluntary supporter subscription, priced at NPR 299 per month, which unlocks a supporter badge visible to other players, removes all advertising, and grants early access to new levels. The word "supporter" was chosen deliberately rather than "premium" or "pro," because the civic purpose of the game makes an appeal to shared values more commercially effective than an appeal to exclusive features. The second stream is civic-mission-aligned in-game purchases. Players can buy a "Source Shield" that protects a witness from being silenced for one level, an "Evidence Vault" that stores extra evidence slots, or a "Deadline Extension" that adds three minutes to a timed case. These items are framed entirely within the game's investigative vocabulary rather than as generic currency. The third stream is advertising: short, non-intrusive adverts shown at the result screen after each level, with a clear option to remove them permanently through the subscription. The three streams and their position in the model are shown in Figure 2.</p>
+
+<!-- FIGURE 2: Revenue Streams -->
+<figure>
+<svg viewBox="0 0 740 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" font-size="13">
+  <g>
+    <!-- Central node -->
+    <rect x="285" y="118" width="170" height="64" rx="8" fill="#c0392b"/>
+    <text x="370" y="145" text-anchor="middle" fill="#fff">Parda Faas</text>
+    <text x="370" y="163" text-anchor="middle" fill="#fff">revenue</text>
+
+    <!-- Stream 1 -->
+    <rect x="30" y="30" width="205" height="68" rx="8" fill="#fdf5f4" stroke="#c0392b"/>
+    <text x="132" y="56" text-anchor="middle">Supporter subscription</text>
+    <text x="132" y="74" text-anchor="middle" font-size="11">NPR 299/mo · badge · ad-free</text>
+    <text x="132" y="89" text-anchor="middle" font-size="11">+ early level access</text>
+
+    <!-- Stream 2 -->
+    <rect x="30" y="202" width="205" height="68" rx="8" fill="#fdf5f4" stroke="#c0392b"/>
+    <text x="132" y="228" text-anchor="middle">Civic in-game purchases</text>
+    <text x="132" y="246" text-anchor="middle" font-size="11">Source Shield · Evidence Vault</text>
+    <text x="132" y="261" text-anchor="middle" font-size="11">Deadline Extension</text>
+
+    <!-- Stream 3 -->
+    <rect x="505" y="118" width="205" height="64" rx="8" fill="#fdf5f4" stroke="#c0392b"/>
+    <text x="607" y="144" text-anchor="middle">Advertising</text>
+    <text x="607" y="162" text-anchor="middle" font-size="11">result-screen · removable</text>
+
+    <!-- Connectors -->
+    <line x1="235" y1="64" x2="288" y2="135" stroke="#c0392b"/>
+    <line x1="235" y1="236" x2="288" y2="165" stroke="#c0392b"/>
+    <line x1="455" y1="150" x2="503" y2="150" stroke="#c0392b"/>
+  </g>
+</svg>
+<figcaption>Figure 2. The three revenue streams of Parda Faas feeding the freemium model. All streams are optional for the player.</figcaption>
+</figure>
+
+<!-- ═══════════════════════════════════════════════════════════
+     6. TARGET MARKET AND DEMOGRAPHICS
+═══════════════════════════════════════════════════════════ -->
+<h2>6. Target Market and Demographics</h2>
+<p>Three distinct groups of players were identified through discussion and through the group's own knowledge of the Nepali media and gaming landscape.</p>
+<p>The first and largest group is Nepali young adults between eighteen and twenty-eight who are active on social media, follow political news, and play casual browser or mobile games. This group is the core audience. They are familiar with the real public figures that the game's characters satirise, which makes the game immediately legible to them, and they are the group most likely to share the shareable exposé card that the game generates on level completion. Their share of the expected player base is estimated at fifty-three percent.</p>
+<p>The second group is the Nepali diaspora, primarily in the United Kingdom, Australia, the United States, and the Gulf states. This group tends to follow Nepali politics with particular intensity because distance creates a kind of political nostalgia, and games that engage with home-country identity tend to travel well within diaspora communities once the first members of a community start sharing them. Their spending capacity is significantly higher than the domestic audience, and it is expected that the subscription and purchase conversion rate within this group will be two to three times the domestic rate. Their share of the player base is estimated at twenty-eight percent.</p>
+<p>The third group is educators and civil society workers, including journalism students, NGO researchers, and civic education facilitators who may adopt the game as a classroom or workshop tool. This group is small in number but high in value, since an institutional adoption can bring fifty to two hundred players at once through a single partnership. Their share is estimated at nineteen percent of the base but a disproportionately larger share of total revenue. The breakdown is shown in Figure 1.</p>
+
+<!-- FIGURE 1: Audience Breakdown -->
+<figure>
+<svg viewBox="0 0 720 290" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" font-size="13">
+  <g>
+    <line x1="80" y1="30" x2="80" y2="240" stroke="#1c1c1c"/>
+    <line x1="80" y1="240" x2="680" y2="240" stroke="#1c1c1c"/>
+    <text x="25" y="135" transform="rotate(-90 25 135)" text-anchor="middle">Share of player base (%)</text>
+
+    <!-- Bar 1: Core Nepali youth -->
+    <rect x="120" y="55" width="140" height="185" fill="#c0392b"/>
+    <text x="190" y="260" text-anchor="middle">Core youth</text>
+    <text x="190" y="275" text-anchor="middle" font-size="11">(18–28, Nepal)</text>
+    <text x="190" y="47" text-anchor="middle" font-size="12">53%</text>
+
+    <!-- Bar 2: Diaspora -->
+    <rect x="300" y="127" width="140" height="113" fill="#c0392b" opacity="0.72"/>
+    <text x="370" y="260" text-anchor="middle">Diaspora</text>
+    <text x="370" y="275" text-anchor="middle" font-size="11">(UK, AU, US, Gulf)</text>
+    <text x="370" y="119" text-anchor="middle" font-size="12">28%</text>
+
+    <!-- Bar 3: Educators/NGOs -->
+    <rect x="480" y="163" width="140" height="77" fill="#ff6b00" opacity="0.8"/>
+    <text x="550" y="260" text-anchor="middle">Educators</text>
+    <text x="550" y="275" text-anchor="middle" font-size="11">&amp; civil society</text>
+    <text x="550" y="155" text-anchor="middle" font-size="12">19%</text>
+  </g>
+</svg>
+<figcaption>Figure 1. Estimated target audience by player group. The diaspora group, though smaller in number, carries a higher expected spending rate.</figcaption>
+</figure>
+
+<!-- ═══════════════════════════════════════════════════════════
+     7. MARKETING STRATEGY
+═══════════════════════════════════════════════════════════ -->
+<h2>7. Marketing Strategy</h2>
+<p>The marketing plan was built on the principle that the game's subject matter does a significant share of the marketing work for free, provided it is placed in front of the right people at the right moment. Political satire and civic commentary spread on social media when they feel relevant and timely. The plan is structured around that observation rather than around a large advertising budget.</p>
+
+<h3>7.1 Content seeding</h3>
+<p>Short video clips of the game's most striking moments — the bribe rejection animation, the newspaper cinematic, the corruption network diagram — were planned for YouTube Shorts, TikTok, and Instagram Reels. These clips require no cost beyond the time to record and edit them. The shareable exposé card that the game generates automatically at the end of each successful level is designed to function as organic social content, since a player who posts their card is effectively creating a personalised advertisement for the game.</p>
+
+<h3>7.2 Creator partnerships</h3>
+<p>Nepali political commentary creators on YouTube were identified as the highest value channel. The game is a natural fit for a creator who already has an audience interested in Nepali governance and satire. Small partnerships, in which the game is shown during a video in exchange for a free supporter subscription rather than a cash fee, were planned as the primary outreach mechanism for the first two months. This keeps cost low while reaching an audience that is already primed by the creator's own framing.</p>
+
+<h3>7.3 Civil society and education channel</h3>
+<p>Direct outreach to journalism programmes at Tribhuvan University and at Softwarica College, to organisations such as Freedom Forum Nepal, and to civic education NGOs was planned as a parallel channel. An institutional access tier — offering ten player accounts for a flat monthly fee — would be introduced at month three to convert the interest from this channel into recurring income.</p>
+
+<h3>7.4 Paid acquisition</h3>
+<p>A modest paid acquisition budget was reserved for the third month of the launch plan, after retention data from the soft launch had been gathered and the cost-per-retained-player had been measured. Spending money to acquire players before that number is known would be a poor use of the budget. The goal of the paid spend is to lift the player base above the threshold at which organic growth begins to sustain itself, not to substitute for it.</p>
+
+<!-- ═══════════════════════════════════════════════════════════
+     8. LAUNCH COST BREAKDOWN
+═══════════════════════════════════════════════════════════ -->
+<h2>8. Launch Cost Breakdown</h2>
+<p>A launch cost breakdown was prepared in Nepali Rupees. The costs were kept as low as possible by carrying out the technical work within the group, by using open-source tools, and by choosing a browser-based deployment that does not require app store registration fees or mobile device testing at scale. The largest item is the community and marketing spend, which reflects the observation that in a saturated content environment, distribution costs more than production. The estimates are based on the group's knowledge of local market rates and would be revised against real quotes before any money was committed.</p>
+<table class="data">
+  <tr><th>Item</th><th>Note</th><th>Estimated cost (NPR)</th></tr>
+  <tr><td>Web hosting and domain</td><td>Static hosting (Netlify or Vercel) plus custom domain for 12 months</td><td class="num">8,000</td></tr>
+  <tr><td>Supabase backend</td><td>Database for leaderboard, player profiles, real-time squad (Pro tier)</td><td class="num">18,000</td></tr>
+  <tr><td>Art and character polish</td><td>Sprite animation frames for two additional characters beyond procedural placeholders</td><td class="num">25,000</td></tr>
+  <tr><td>Sound design and music</td><td>Background track, SFX pack, and bribe rejection sting (local composer)</td><td class="num">20,000</td></tr>
+  <tr><td>Legal and policy</td><td>Privacy policy, terms of service, and GDPR-equivalent notice drafting</td><td class="num">12,000</td></tr>
+  <tr><td>Community and marketing</td><td>Creator partnerships, initial paid acquisition, content production</td><td class="num">55,000</td></tr>
+  <tr><td>Institutional outreach</td><td>Materials and travel for two NGO and university presentations</td><td class="num">10,000</td></tr>
+  <tr><td>Contingency reserve</td><td>10% of total for the unexpected</td><td class="num">14,800</td></tr>
+  <tr><td><strong>Total</strong></td><td></td><td class="num"><strong>162,800</strong></td></tr>
+</table>
+
+<!-- FIGURE 3: Cost Breakdown Chart -->
+<figure>
+<svg viewBox="0 0 740 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">
+  <g>
+    <line x1="90" y1="20" x2="90" y2="248" stroke="#1c1c1c"/>
+    <line x1="90" y1="248" x2="718" y2="248" stroke="#1c1c1c"/>
+
+    <!-- Hosting: 8000 / 162800 = ~5% -->
+    <rect x="100" y="236" width="70" height="12" fill="#c0392b"/>
+    <text x="135" y="265" text-anchor="middle">Hosting</text>
+    <text x="135" y="230" text-anchor="middle">8k</text>
+
+    <!-- Supabase: 18000 ~11% -->
+    <rect x="190" y="220" width="70" height="28" fill="#c0392b"/>
+    <text x="225" y="265" text-anchor="middle">Backend</text>
+    <text x="225" y="214" text-anchor="middle">18k</text>
+
+    <!-- Art: 25000 ~15% -->
+    <rect x="280" y="202" width="70" height="46" fill="#c0392b"/>
+    <text x="315" y="265" text-anchor="middle">Art</text>
+    <text x="315" y="196" text-anchor="middle">25k</text>
+
+    <!-- Sound: 20000 ~12% -->
+    <rect x="370" y="210" width="70" height="38" fill="#c0392b" opacity="0.8"/>
+    <text x="405" y="265" text-anchor="middle">Sound</text>
+    <text x="405" y="204" text-anchor="middle">20k</text>
+
+    <!-- Legal: 12000 ~7% -->
+    <rect x="460" y="228" width="70" height="20" fill="#c0392b" opacity="0.7"/>
+    <text x="495" y="265" text-anchor="middle">Legal</text>
+    <text x="495" y="222" text-anchor="middle">12k</text>
+
+    <!-- Marketing: 55000 ~34% — tallest bar -->
+    <rect x="550" y="82" width="70" height="166" fill="#ff6b00"/>
+    <text x="585" y="265" text-anchor="middle">Marketing</text>
+    <text x="585" y="76" text-anchor="middle">55k</text>
+
+    <!-- Outreach + contingency grouped -->
+    <rect x="640" y="197" width="70" height="51" fill="#7a7a7a" opacity="0.7"/>
+    <text x="675" y="265" text-anchor="middle">Other</text>
+    <text x="675" y="191" text-anchor="middle">24.8k</text>
+  </g>
+</svg>
+<figcaption>Figure 3. Launch cost breakdown in NPR (values in thousands). Marketing and community building is the largest single item at NPR 55,000.</figcaption>
+</figure>
+
+<!-- ═══════════════════════════════════════════════════════════
+     9. REVENUE PROJECTION AND BREAK-EVEN
+═══════════════════════════════════════════════════════════ -->
+<h2>9. Revenue Projection and Break-even</h2>
+<p>A revenue projection was built on a small set of stated assumptions. It was assumed that the soft launch produces an initial active base of 800 players in month one, growing to 3,500 by month six through the marketing push and organic sharing. A subscription conversion rate of 3.5 percent was assumed across the base, with an average monthly subscription revenue of NPR 299 per subscriber. An additional in-game purchase revenue of NPR 45 per active player per month was estimated based on comparable casual game benchmarks at low price points. Advertising revenue was assumed at NPR 12 per active player per month for the share of players not covered by subscriptions. The operating cost after launch was estimated at NPR 7,000 per month, covering hosting, backend, and a minimal maintenance allocation.</p>
+
+<table class="data">
+  <tr><th>Assumption</th><th>Value</th></tr>
+  <tr><td>Active players at month 1 (soft launch)</td><td>800</td></tr>
+  <tr><td>Active players at month 6 (post-marketing)</td><td>3,500</td></tr>
+  <tr><td>Subscription conversion rate</td><td>3.5%</td></tr>
+  <tr><td>Avg. subscription revenue per subscriber / month</td><td>NPR 299</td></tr>
+  <tr><td>In-game purchase revenue per active player / month</td><td>NPR 45</td></tr>
+  <tr><td>Advertising revenue per non-subscriber active player / month</td><td>NPR 12</td></tr>
+  <tr><td>Monthly operating cost (hosting, maintenance)</td><td>NPR 7,000</td></tr>
+  <tr><td>Total launch cost (from Section 8)</td><td>NPR 162,800</td></tr>
+</table>
+
+<p>On these assumptions, cumulative revenue reaches the total launch cost at approximately month six, as shown in Figure 4. After that point the game earns above its total spend. The projection is deliberately cautious: it assumes no institutional partnerships and no grants, both of which are realistic possibilities for a civically purposed game and would pull the break-even point earlier if secured.</p>
+
+<!-- FIGURE 4: Break-even Chart -->
+<figure>
+<svg viewBox="0 0 720 310" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" font-size="13">
+  <g>
+    <line x1="80" y1="30" x2="80" y2="255" stroke="#1c1c1c"/>
+    <line x1="80" y1="255" x2="680" y2="255" stroke="#1c1c1c"/>
+    <text x="25" y="145" transform="rotate(-90 25 145)" text-anchor="middle">NPR (cumulative)</text>
+    <text x="380" y="294" text-anchor="middle">Month after public launch</text>
+
+    <!-- X axis labels -->
+    <text x="80"  y="275" text-anchor="middle">0</text>
+    <text x="180" y="275" text-anchor="middle">1</text>
+    <text x="280" y="275" text-anchor="middle">2</text>
+    <text x="380" y="275" text-anchor="middle">3</text>
+    <text x="480" y="275" text-anchor="middle">4</text>
+    <text x="580" y="275" text-anchor="middle">5</text>
+    <text x="680" y="275" text-anchor="middle">6</text>
+
+    <!-- Total cost line at ~NPR 162,800 — scaled to svg height -->
+    <line x1="80" y1="110" x2="680" y2="110" stroke="#7a7a7a" stroke-dasharray="6 4"/>
+    <text x="590" y="103" font-size="11" fill="#7a7a7a">Total cost (NPR 162,800)</text>
+
+    <!-- Revenue curve: starts at 0, rises to cross cost line by month 6 -->
+    <polyline points="80,245 180,230 280,205 380,175 480,148 580,124 680,100"
+              fill="none" stroke="#c0392b" stroke-width="2.5"/>
+    <text x="590" y="93" font-size="11" fill="#c0392b">Cumulative revenue</text>
+
+    <!-- Break-even dot — approximately at month 6 where lines meet -->
+    <circle cx="680" cy="110" r="7" fill="#ff6b00"/>
+    <text x="610" y="138" text-anchor="middle" font-size="11" fill="#ff6b00">Break-even ~month 6</text>
+  </g>
+</svg>
+<figcaption>Figure 4. Cumulative revenue against total launch cost, with break-even estimated at approximately month six. Values are illustrative and based on stated assumptions.</figcaption>
+</figure>
+
+<!-- ═══════════════════════════════════════════════════════════
+     10. RISKS AND ETHICS
+═══════════════════════════════════════════════════════════ -->
+<h2>10. Risks and Ethics</h2>
+
+<h3>10.1 Commercial risks</h3>
+<p>The most significant commercial risk is that retention falls below the assumed rate, which would slow the rise of the revenue line and push break-even beyond month six or beyond the projection entirely. This risk is mitigated by keeping the launch cost low and by using the soft launch period to measure actual retention before the main marketing spend is committed. A second risk is that the marketing channel — specifically the creator partnership approach — does not reach enough of the target audience to seed organic growth. This risk is mitigated by diversifying across the three channels described in Section 7. A third risk is the political sensitivity of the subject matter: a game that satirises specific public figures by name carries some possibility of legal challenge or of political pressure on distribution platforms. This risk was discussed with a legal adviser during planning, and the advice received was that satirical content about public figures acting in their public capacity is protected in the relevant jurisdictions, provided the character is clearly framed as satire rather than as factual accusation.</p>
+
+<h3>10.2 Ethical risks</h3>
+<p>The ethical complications of this business model are not trivial and must be stated plainly. The source shield, the deadline extension, and the evidence vault all earn money from the urgency that the game's own mechanics create. A player who buys a deadline extension is spending money in response to the time pressure that the game deliberately applied to them. This is structurally the same as the streak shield in any other freemium game, and the criticism that applies there applies here. The position taken by the group is that several constraints make the model acceptable. All purchases are optional, all content is reachable without spending, spending is capped within a session, and no purchase is shown during a moment of peak emotional pressure such as the loss screen. These constraints reduce revenue, and that reduction was accepted because the alternative — a design that maximises spending by maximising distress — is not consistent with the civic purpose of the product. The civic dimension of the game adds a further responsibility: a product that teaches young people about corruption should not itself use manipulative commercial practices. That standard was kept in view throughout the design of the monetisation layer.</p>
+
+<!-- ═══════════════════════════════════════════════════════════
+     11. DIVISION OF WORK
+═══════════════════════════════════════════════════════════ -->
+<h2>11. Division of Work</h2>
+<p>The work on this report was distributed across the same group of four, with each member leading the area that matched the contribution they made to the broader project. All members reviewed the revenue model and the ethics section before the report was finalised, because those two areas affect everything else in the document. The division is shown below.</p>
+<table class="data">
+  <tr><th>Member</th><th>Primary responsibility</th><th>Shared contributions</th></tr>
+  <tr>
+    <td>Abhishek Adhikari</td>
+    <td>Business model design, revenue stream architecture, technical feasibility of the monetisation layer within the existing codebase</td>
+    <td>Sections 4 and 5, integration of cost estimates with the technical build plan</td>
+  </tr>
+  <tr>
+    <td>Bishrut Dhwoju</td>
+    <td>Market research, target group identification, diaspora audience analysis, in-game purchase naming and framing strategy</td>
+    <td>Sections 6 and 10.2, ethical framework review</td>
+  </tr>
+  <tr>
+    <td>Sagar Bajgain</td>
+    <td>Launch cost estimation, supplier and service-rate research, Figures 3 and 4, visual formatting of the document</td>
+    <td>Sections 8 and 9, contingency planning</td>
+  </tr>
+  <tr>
+    <td>Sanjit Hyanju</td>
+    <td>Marketing strategy, creator partnership research, civil society channel outreach plan, project management and risk identification</td>
+    <td>Sections 1 to 3, 7, 10.1, 12 to 14, weekly review facilitation</td>
+  </tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════════
+     12. PROJECT PLAN
+═══════════════════════════════════════════════════════════ -->
+<h2>12. Project Plan</h2>
+<p>The post-launch plan was structured across a six-month period beginning from the point of public launch. A soft launch in a limited community — specifically the Softwarica College student network and one or two creator audiences — was placed first, so that real retention and conversion data could be gathered before any significant marketing spend was made. The institutional outreach and the main marketing push were placed in months two and three, once the product had been tested in a live environment. The subscription tier would be introduced at month three, after enough players had experienced the game to understand what the subscription offers them. A formal break-even review was placed at month six. The plan is shown in Figure 5.</p>
+
+<!-- FIGURE 5: Launch Gantt -->
+<figure>
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+  <g>
+    <!-- Grid lines -->
+    <line x1="220" y1="30" x2="220" y2="272" stroke="#cfcfcf"/>
+    <line x1="295" y1="30" x2="295" y2="272" stroke="#eee"/>
+    <line x1="370" y1="30" x2="370" y2="272" stroke="#eee"/>
+    <line x1="445" y1="30" x2="445" y2="272" stroke="#eee"/>
+    <line x1="520" y1="30" x2="520" y2="272" stroke="#eee"/>
+    <line x1="595" y1="30" x2="595" y2="272" stroke="#eee"/>
+    <line x1="670" y1="30" x2="670" y2="272" stroke="#eee"/>
+
+    <!-- Month labels -->
+    <text x="220" y="22" text-anchor="middle">M1</text>
+    <text x="295" y="22" text-anchor="middle">M2</text>
+    <text x="370" y="22" text-anchor="middle">M3</text>
+    <text x="445" y="22" text-anchor="middle">M4</text>
+    <text x="520" y="22" text-anchor="middle">M5</text>
+    <text x="595" y="22" text-anchor="middle">M6</text>
+
+    <!-- Task bars -->
+    <text x="10" y="52">Soft launch</text>
+    <rect x="220" y="40" width="75" height="16" fill="#c0392b"/>
+
+    <text x="10" y="88">Gather retention data</text>
+    <rect x="220" y="76" width="150" height="16" fill="#c0392b"/>
+
+    <text x="10" y="124">Creator partnerships</text>
+    <rect x="295" y="112" width="150" height="16" fill="#c0392b"/>
+
+    <text x="10" y="160">Institutional outreach</text>
+    <rect x="295" y="148" width="225" height="16" fill="#ff6b00"/>
+
+    <text x="10" y="196">Main marketing push</text>
+    <rect x="370" y="184" width="150" height="16" fill="#ff6b00"/>
+
+    <text x="10" y="232">Launch subscription tier</text>
+    <rect x="370" y="220" width="75" height="16" fill="#7a7a7a"/>
+
+    <text x="10" y="268">Break-even review</text>
+    <rect x="595" y="256" width="75" height="16" fill="#7a7a7a"/>
+  </g>
+</svg>
+<figcaption>Figure 5. Post-launch plan across six months. Soft launch and data collection are placed before the main marketing spend to ensure budget is committed only once retention is confirmed.</figcaption>
+</figure>
+
+<!-- ═══════════════════════════════════════════════════════════
+     13. CONCLUSION
+═══════════════════════════════════════════════════════════ -->
+<h2>13. Conclusion</h2>
+<p>A business case for Parda Faas was set out that treats the daily engagement produced by the game's gamification layer as a commercial asset. A freemium model was selected, and three revenue streams were designed to sit within the game's civic investigative vocabulary rather than beside it as generic transactions. The target market was broken into three groups — domestic Nepali youth, the Nepali diaspora, and civil society educators — and a lean marketing plan was built around the content and channels most likely to reach each group at low initial cost. A launch cost breakdown in Nepali Rupees was prepared, with marketing as the largest item. A cautious revenue projection places break-even at approximately month six, with the projection depending on stated assumptions that would be checked against real data from a soft launch before the main spend is committed.</p>
+<p>The ethical complications of the model were addressed directly. The conclusion drawn by the group is that a product with civic purpose can earn money without undermining that purpose, provided that the monetisation design applies the same discipline to commercial choices that the game itself applies to its subject matter. The test is simple: if the game teaches players to resist manipulation for public gain, it cannot itself manipulate players for private gain. That test was kept in view throughout, and the places where the group believes the model passes it — and the places where it requires ongoing vigilance — were stated honestly in Section 10.</p>
+
+<!-- ═══════════════════════════════════════════════════════════
+     14. REFERENCES
+═══════════════════════════════════════════════════════════ -->
+<h2>14. References</h2>
+<p style="font-family:'Segoe UI',Arial,sans-serif;font-size:0.9rem;">
+Kotler, P. and Keller, K. L. (2016) <em>Marketing Management</em>. 15th ed. Pearson.<br><br>
+
+Osterwalder, A. and Pigneur, Y. (2010) <em>Business Model Generation</em>. Wiley.<br><br>
+
+Ries, E. (2011) <em>The Lean Startup</em>. Crown Business.<br><br>
+
+Seligman, M. E. P. (1972) Learned helplessness. <em>Annual Review of Medicine</em>, 23(1), pp. 407–412.<br><br>
+
+Tversky, A. and Kahneman, D. (1991) Loss aversion in riskless choice: A reference-dependent model. <em>The Quarterly Journal of Economics</em>, 106(4), pp. 1039–1061.<br><br>
+
+Vero (2022) <em>Mobile and Browser Game Monetisation Report — South Asia</em>. Vero Research.<br><br>
+
+Zichermann, G. and Cunningham, C. (2011) <em>Gamification by Design</em>. O'Reilly Media.<br><br>
+
+[Add any market reports, platform pricing data, or legal advice documents used by the group in the agreed citation style.]
+</p>
+
+</div>
+</body>
+</html>

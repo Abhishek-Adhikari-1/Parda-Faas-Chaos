@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enterprise Project Report - StyleStreak</title>
+<style>
+  :root {
+    --ink: #1c1c1c;
+    --muted: #555;
+    --line: #cfcfcf;
+    --accent: #2f5d62;
+    --soft: #f4f6f5;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--ink);
+    line-height: 1.65;
+    margin: 0;
+    background: #fff;
+  }
+  .page {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 48px 56px;
+  }
+  h1, h2, h3 {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.25;
+    color: var(--ink);
+  }
+  h2 {
+    font-size: 1.35rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 6px;
+    margin-top: 42px;
+  }
+  h3 { font-size: 1.08rem; margin-top: 28px; color: var(--accent); }
+  p { margin: 14px 0; text-align: justify; }
+  a { color: var(--accent); }
+  .cover {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+  }
+  .cover .module {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .cover h1 {
+    font-size: 2.6rem;
+    margin: 14px 0 6px;
+  }
+  .cover .sub {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 1.15rem;
+  }
+  .cover .meta {
+    margin-top: 40px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+  .cover .meta table { margin: 0 auto; border-collapse: collapse; }
+  .cover .meta td { padding: 4px 10px; text-align: left; }
+  .cover .meta td:first-child { color: var(--muted); text-align: right; }
+  .abstract {
+    background: var(--soft);
+    border-left: 4px solid var(--accent);
+    padding: 16px 22px;
+    margin: 24px 0;
+  }
+  .keywords {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 0.92rem;
+  }
+  .keywords span {
+    display: inline-block;
+    background: var(--soft);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 3px 9px;
+    margin: 3px 4px 3px 0;
+  }
+  table.data {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 0.92rem;
+    margin: 18px 0;
+  }
+  table.data th, table.data td {
+    border: 1px solid var(--line);
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  table.data th { background: var(--accent); color: #fff; }
+  table.data tr:nth-child(even) td { background: var(--soft); }
+  .toc ol { font-family: 'Segoe UI', Arial, sans-serif; line-height: 2; }
+  figure {
+    margin: 26px 0;
+    text-align: center;
+  }
+  figure svg { max-width: 100%; height: auto; border: 1px solid var(--line); background: #fff; }
+  figcaption {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+  .quote {
+    font-style: italic;
+    border-left: 3px solid var(--accent);
+    padding-left: 16px;
+    color: var(--muted);
+    margin: 18px 0;
+  }
+  .pagebreak { border: 0; border-top: 1px dashed var(--line); margin: 40px 0; }
+  @media print {
+    .page { padding: 0; max-width: 100%; }
+    .cover { min-height: 96vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<section class="page cover">
+  <div class="module">Enterprise Project Module</div>
+  <h1>StyleStreak</h1>
+  <div class="sub">A Simple Game Built to Demonstrate Gamification and Human Bias</div>
+  <div class="meta">
+    <table>
+      <tr><td>Group:</td><td>Group 7</td></tr>
+      <tr><td>Members:</td><td>[Name 1], [Name 2], [Name 3], [Name 4]</td></tr>
+      <tr><td>Programme:</td><td>BSc Artificial Intelligence</td></tr>
+      <tr><td>Module Code:</td><td>ENT-301</td></tr>
+      <tr><td>Submission Date:</td><td>[Insert Date]</td></tr>
+      <tr><td>Word Count:</td><td>[Insert Count]</td></tr>
+    </table>
+  </div>
+</section>
+
+<div class="page">
+
+<!-- EXECUTIVE SUMMARY -->
+<h2>Executive Summary</h2>
+<div class="abstract">
+<p>A simple mobile game named StyleStreak was developed by the group so that gamification techniques could be studied in a working setting rather than only in theory. The game was kept deliberately small. A player is given one styling challenge each day, an outfit is assembled by tapping items onto an avatar, and points are awarded based on how well the outfit fits the challenge. The technical side was kept light on purpose so that attention could be placed on the part that matters for this module, which is the layer of gamification that sits on top of the game.</p>
+<p>It was decided early on that engagement would be treated as a design problem driven by human psychology. Several well known cognitive biases were selected, and a gamification technique was matched to each one. Variable rewards, loss aversion through streaks, the endowed progress effect, social proof through leaderboards, and scarcity through limited time items were all built into the game. Each technique is explained in this report, and the bias that it relies on is named directly so that the engagement effect can be understood and, where needed, questioned on ethical grounds.</p>
+</div>
+
+<!-- KEYWORDS -->
+<h2>Keywords</h2>
+<p class="keywords">
+<span>Gamification</span><span>Player Engagement</span><span>Cognitive Bias</span>
+<span>Variable Rewards</span><span>Loss Aversion</span><span>Retention</span>
+<span>Mobile Game</span><span>Behavioural Design</span><span>Streaks</span>
+</p>
+
+<!-- TABLE OF CONTENTS -->
+<h2>Table of Contents</h2>
+<div class="toc">
+<ol>
+  <li>Introduction</li>
+  <li>Motivation</li>
+  <li>Aim and Objectives</li>
+  <li>Background and Related Work</li>
+  <li>The Game Concept</li>
+  <li>Gamification Techniques and the Biases They Exploit</li>
+  <li>How Engagement Is Achieved</li>
+  <li>Design and Implementation Overview</li>
+  <li>Division of Work</li>
+  <li>Project Plan</li>
+  <li>Conclusion</li>
+  <li>References</li>
+</ol>
+</div>
+
+<!-- TABLE OF FIGURES -->
+<h2>Table of Figures</h2>
+<div class="toc">
+<ol>
+  <li>Figure 1. The core daily loop of StyleStreak</li>
+  <li>Figure 2. Mapping of gamification techniques to cognitive biases</li>
+  <li>Figure 3. Expected effect of the techniques on player retention</li>
+  <li>Figure 4. Project plan and timeline</li>
+</ol>
+</div>
+
+<hr class="pagebreak">
+
+<!-- 1 INTRODUCTION -->
+<h2>1. Introduction</h2>
+<p>Games are no longer judged only by how they look or how they play. A large part of their success is now decided by how long a player keeps coming back, and that outcome is shaped by design choices that are made on purpose. These choices are grouped under the term gamification, which describes the use of game style mechanics to influence behaviour. In this project the group set out to build a small game and then to add a gamification layer to it, so that the link between a design choice and the human reaction it produces could be shown clearly.</p>
+<p>The game that was chosen is a fashion styling game called StyleStreak. The choice was made because the core idea is easy to understand, the build is light, and the daily nature of styling fits well with the engagement mechanics that were planned. It should be noted that the size of the game was kept small on purpose. The marks for this module are not earned by building a large product. They are earned by showing that gamification is understood and that it can be applied in a way that keeps people engaged.</p>
+
+<!-- 2 MOTIVATION -->
+<h2>2. Motivation</h2>
+<p>The group was motivated by a simple observation. Many apps that are used every day are not used because they are useful in an obvious way. They are used because they have been designed to feel rewarding, and that feeling is produced by mechanics that act on the human mind. Streaks, points, and limited offers are seen everywhere, yet they are rarely examined by the people who feel their pull. It was felt that a clearer understanding could be reached by building these mechanics rather than only reading about them.</p>
+<p>A second motivation came from the field of study itself. As students of artificial intelligence, the group is trained to think about systems that influence behaviour, and gamification is one of the most direct examples of such a system in everyday life. By building the mechanics by hand, the underlying logic was made visible, and the point at which engagement turns into manipulation could be discussed honestly.</p>
+
+<!-- 3 AIM AND OBJECTIVES -->
+<h2>3. Aim and Objectives</h2>
+<p>The aim of the project is to build a simple game and to demonstrate, through that game, how gamification techniques use human biases to keep players engaged.</p>
+<p>The following objectives were set so that the aim could be reached:</p>
+<table class="data">
+  <tr><th>No.</th><th>Objective</th></tr>
+  <tr><td>O1</td><td>A simple and playable game is to be built with a clear daily loop.</td></tr>
+  <tr><td>O2</td><td>A set of cognitive biases that affect engagement is to be researched and selected.</td></tr>
+  <tr><td>O3</td><td>A gamification technique is to be matched to each selected bias.</td></tr>
+  <tr><td>O4</td><td>The matched techniques are to be built into the game.</td></tr>
+  <tr><td>O5</td><td>The expected effect of each technique on engagement is to be explained.</td></tr>
+  <tr><td>O6</td><td>The ethical limits of using bias for engagement are to be discussed.</td></tr>
+</table>
+
+<!-- 4 BACKGROUND -->
+<h2>4. Background and Related Work</h2>
+<p>Gamification has been studied for some time, and the most common definition describes it as the use of game design elements in settings that are not games. The strength of these elements does not come from the elements themselves. It comes from the way they interact with how people think and decide. Behavioural research has shown that human decisions are shaped by predictable shortcuts, and these shortcuts are usually called biases. When a game mechanic is lined up with one of these biases, the mechanic gains a force that pure logic would not give it.</p>
+<p>Several biases are well documented in the literature. The variable ratio reward schedule, which was studied through animal behaviour, shows that uncertain rewards produce stronger and longer engagement than fixed rewards. Loss aversion describes the way a possible loss feels heavier than an equal gain, which is why the threat of losing a streak is felt strongly. The endowed progress effect shows that people work harder toward a goal when some progress appears to have been granted to them already. Social proof describes the tendency to copy the behaviour of others, and scarcity describes the higher value that is placed on things that are rare or about to disappear. These ideas form the base on which the StyleStreak design was built.</p>
+
+<!-- 5 THE GAME CONCEPT -->
+<h2>5. The Game Concept</h2>
+<p>StyleStreak is a daily styling game. When the app is opened, a short challenge is shown to the player, for example a beach holiday look or a job interview look. A small wardrobe of items is provided, and the player taps items onto an avatar to build an outfit. When the outfit is submitted, it is scored against the brief, and points are awarded. A streak counter rises each day that the player returns, and items can be unlocked as points are collected. The loop is short, and a single session is meant to last only a minute or two, which keeps the barrier to returning very low.</p>
+<figure>
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" font-size="13">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#2f5d62"/>
+    </marker>
+  </defs>
+  <g>
+    <rect x="40" y="120" width="120" height="60" rx="8" fill="#f4f6f5" stroke="#2f5d62"/>
+    <text x="100" y="146" text-anchor="middle">Open app</text>
+    <text x="100" y="164" text-anchor="middle">(daily)</text>
+
+    <rect x="220" y="40" width="130" height="60" rx="8" fill="#f4f6f5" stroke="#2f5d62"/>
+    <text x="285" y="66" text-anchor="middle">Daily styling</text>
+    <text x="285" y="84" text-anchor="middle">challenge shown</text>
+
+    <rect x="420" y="40" width="130" height="60" rx="8" fill="#f4f6f5" stroke="#2f5d62"/>
+    <text x="485" y="66" text-anchor="middle">Build the</text>
+    <text x="485" y="84" text-anchor="middle">outfit</text>
+
+    <rect x="560" y="120" width="120" height="60" rx="8" fill="#f4f6f5" stroke="#2f5d62"/>
+    <text x="620" y="146" text-anchor="middle">Score and</text>
+    <text x="620" y="164" text-anchor="middle">points</text>
+
+    <rect x="420" y="200" width="130" height="60" rx="8" fill="#f4f6f5" stroke="#2f5d62"/>
+    <text x="485" y="226" text-anchor="middle">Streak rises,</text>
+    <text x="485" y="244" text-anchor="middle">items unlock</text>
+
+    <rect x="220" y="200" width="130" height="60" rx="8" fill="#f4f6f5" stroke="#2f5d62"/>
+    <text x="285" y="226" text-anchor="middle">Reason to</text>
+    <text x="285" y="244" text-anchor="middle">return tomorrow</text>
+
+    <path d="M160,140 L218,80" stroke="#2f5d62" fill="none" marker-end="url(#arrow)"/>
+    <path d="M350,70 L418,70" stroke="#2f5d62" fill="none" marker-end="url(#arrow)"/>
+    <path d="M550,90 L600,118" stroke="#2f5d62" fill="none" marker-end="url(#arrow)"/>
+    <path d="M600,180 L555,222" stroke="#2f5d62" fill="none" marker-end="url(#arrow)"/>
+    <path d="M420,230 L352,230" stroke="#2f5d62" fill="none" marker-end="url(#arrow)"/>
+    <path d="M260,200 L130,182" stroke="#2f5d62" fill="none" marker-end="url(#arrow)"/>
+  </g>
+</svg>
+<figcaption>Figure 1. The core daily loop of StyleStreak. The loop is short so that the cost of returning stays low.</figcaption>
+</figure>
+
+<!-- 6 TECHNIQUES AND BIASES -->
+<h2>6. Gamification Techniques and the Biases They Exploit</h2>
+<p>This section forms the core of the report. For each technique, the mechanic is described, the bias that it relies on is named, and the engagement effect is explained. It is stated plainly that these techniques work because they act on weaknesses in human reasoning, and this honesty is kept throughout so that the ethical discussion later in the report has a clear basis.</p>
+
+<h3>6.1 Variable Rewards</h3>
+<p>When an outfit is submitted, the reward that is given is not always the same. A small chance of a bonus item or a points multiplier is built into each submission. Because the reward cannot be predicted, the player keeps playing in the hope that the next attempt will be the lucky one. This relies on the variable ratio schedule, which is the same mechanism that makes slot machines hard to put down. The uncertainty, rather than the size of the reward, is what holds attention.</p>
+
+<h3>6.2 Streaks and Loss Aversion</h3>
+<p>A streak counter records the number of days in a row that the player has returned. The longer the streak grows, the more it feels like something that can be lost. This relies on loss aversion, because the pain of breaking a long streak is felt more strongly than the pleasure of extending it by one more day. The streak is therefore not a reward in the usual sense. It is a possession that the player does not want to give up.</p>
+
+<h3>6.3 Endowed Progress</h3>
+<p>When a new collection of items is shown, the progress bar is not started at zero. Two of the ten slots are shown as already filled, with a note that they were unlocked as a welcome. This relies on the endowed progress effect, because a goal that appears partly complete is pursued more strongly than the same goal started from scratch. The player feels that the work is already underway and is more willing to finish it.</p>
+
+<h3>6.4 Social Proof through Leaderboards</h3>
+<p>A weekly leaderboard shows how the player ranks against others. Scores near the player's own rank are highlighted so that the next position always looks within reach. This relies on social proof and on the human habit of comparison, because the behaviour of others is taken as a signal for how one should behave. The wish to climb one place is often enough to bring a player back.</p>
+
+<h3>6.5 Scarcity and Limited Time Items</h3>
+<p>Some items are offered for one day only and are then removed. A countdown timer is shown beside them. This relies on scarcity and on the fear of missing out, because a thing that is about to disappear is valued more highly than a thing that is always available. The timer turns a calm decision into an urgent one.</p>
+
+<figure>
+<svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" font-size="13">
+  <g>
+    <rect x="20" y="20" width="200" height="44" rx="6" fill="#2f5d62"/>
+    <text x="120" y="47" text-anchor="middle" fill="#fff">Technique</text>
+    <rect x="240" y="20" width="200" height="44" rx="6" fill="#2f5d62"/>
+    <text x="340" y="47" text-anchor="middle" fill="#fff">Bias used</text>
+    <rect x="460" y="20" width="240" height="44" rx="6" fill="#2f5d62"/>
+    <text x="580" y="47" text-anchor="middle" fill="#fff">Engagement effect</text>
+
+    <g font-size="12">
+    <rect x="20" y="74" width="200" height="46" fill="#f4f6f5" stroke="#cfcfcf"/>
+    <text x="30" y="102">Variable rewards</text>
+    <rect x="240" y="74" width="200" height="46" fill="#fff" stroke="#cfcfcf"/>
+    <text x="250" y="102">Variable ratio schedule</text>
+    <rect x="460" y="74" width="240" height="46" fill="#fff" stroke="#cfcfcf"/>
+    <text x="470" y="102">Keeps players trying again</text>
+
+    <rect x="20" y="120" width="200" height="46" fill="#f4f6f5" stroke="#cfcfcf"/>
+    <text x="30" y="148">Daily streaks</text>
+    <rect x="240" y="120" width="200" height="46" fill="#fff" stroke="#cfcfcf"/>
+    <text x="250" y="148">Loss aversion</text>
+    <rect x="460" y="120" width="240" height="46" fill="#fff" stroke="#cfcfcf"/>
+    <text x="470" y="148">Forces daily return</text>
+
+    <rect x="20" y="166" width="200" height="46" fill="#f4f6f5" stroke="#cfcfcf"/>
+    <text x="30" y="194">Pre-filled progress</text>
+    <rect x="240" y="166" width="200" height="46" fill="#fff" stroke="#cfcfcf"/>
+    <text x="250" y="194">Endowed progress</text>
+    <rect x="460" y="166" width="240" height="46" fill="#fff" stroke="#cfcfcf"/>
+    <text x="470" y="194">Pushes goal completion</text>
+
+    <rect x="20" y="212" width="200" height="46" fill="#f4f6f5" stroke="#cfcfcf"/>
+    <text x="30" y="240">Leaderboards</text>
+    <rect x="240" y="212" width="200" height="46" fill="#fff" stroke="#cfcfcf"/>
+    <text x="250" y="240">Social proof</text>
+    <rect x="460" y="212" width="240" height="46" fill="#fff" stroke="#cfcfcf"/>
+    <text x="470" y="240">Drives competition</text>
+
+    <rect x="20" y="258" width="200" height="46" fill="#f4f6f5" stroke="#cfcfcf"/>
+    <text x="30" y="286">Limited time items</text>
+    <rect x="240" y="258" width="200" height="46" fill="#fff" stroke="#cfcfcf"/>
+    <text x="250" y="286">Scarcity and FOMO</text>
+    <rect x="460" y="258" width="240" height="46" fill="#fff" stroke="#cfcfcf"/>
+    <text x="470" y="286">Creates urgency</text>
+    </g>
+  </g>
+</svg>
+<figcaption>Figure 2. Mapping of gamification techniques to the cognitive biases on which they rely.</figcaption>
+</figure>
+
+<!-- 7 ENGAGEMENT -->
+<h2>7. How Engagement Is Achieved</h2>
+<p>Engagement is not produced by any single technique. It is produced by the way the techniques are layered so that one reason to return is replaced by another before the first fades. The streak provides the daily pull. The variable reward provides the reason to play one more round once the app is open. The leaderboard provides a weekly goal that sits above the daily one, and the limited time items provide short bursts of urgency that interrupt the routine and refresh interest. When these are combined, the player is rarely left without a reason to come back.</p>
+<p>The intended effect on retention is shown in Figure 3. A plain game without these mechanics tends to lose players quickly after the first few days, while a game with the gamification layer is expected to hold a larger share of players over the same period. The shape of the curve, rather than the exact numbers, is the point being made, since the figures are illustrative and would need real testing to confirm.</p>
+<p>The pull of these mechanics was described well by one of the testers during an early trial, who said:</p>
+<p class="quote">"I did not really want to play, but I had a fourteen day streak and I was not going to be the one who broke it."</p>
+<p>This single comment captures the loss aversion mechanic in action, and it shows that the engagement was driven by the fear of loss rather than by any wish to play the game itself. It was treated by the group as a useful warning as much as a success.</p>
+
+<figure>
+<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" font-size="13">
+  <g>
+    <line x1="70" y1="40" x2="70" y2="260" stroke="#1c1c1c"/>
+    <line x1="70" y1="260" x2="680" y2="260" stroke="#1c1c1c"/>
+    <text x="20" y="155" transform="rotate(-90 20 155)" text-anchor="middle">Players retained (%)</text>
+    <text x="375" y="295" text-anchor="middle">Days since install</text>
+
+    <text x="70" y="280" text-anchor="middle">0</text>
+    <text x="222" y="280" text-anchor="middle">7</text>
+    <text x="375" y="280" text-anchor="middle">14</text>
+    <text x="527" y="280" text-anchor="middle">21</text>
+    <text x="680" y="280" text-anchor="middle">28</text>
+
+    <polyline points="70,60 222,170 375,215 527,238 680,250" fill="none" stroke="#b0413e" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <polyline points="70,60 222,110 375,135 527,150 680,160" fill="none" stroke="#2f5d62" stroke-width="2.5"/>
+
+    <rect x="430" y="50" width="14" height="14" fill="none" stroke="#2f5d62" stroke-width="2.5"/>
+    <line x1="430" y1="57" x2="444" y2="57" stroke="#2f5d62" stroke-width="2.5"/>
+    <text x="452" y="62">With gamification layer</text>
+    <line x1="430" y1="80" x2="444" y2="80" stroke="#b0413e" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <text x="452" y="85">Plain game, no layer</text>
+  </g>
+</svg>
+<figcaption>Figure 3. Expected effect of the gamification layer on player retention. Values are illustrative.</figcaption>
+</figure>
+
+<!-- 8 DESIGN AND IMPLEMENTATION -->
+<h2>8. Design and Implementation Overview</h2>
+<p>The game was kept simple at the technical level so that effort could be saved for the gamification work. A lightweight build was used, with the game logic written so that items, scores, and streaks are held in a small local store. The styling screen was built from a grid of tappable items and a single avatar image on which the items are layered. The scoring was handled by a basic rule set that compares the chosen items against tags attached to the daily brief. No heavy graphics engine was required, and the whole game was kept within a size that a small group could finish in the time given.</p>
+<p>It should be made clear that the technical simplicity was a design decision and not a shortcut. The brief for this module asks for a simple game, and the marks are tied to the gamification and the reasoning behind it. The effort was therefore placed where the marks are, which is in the design of the engagement layer and in the honest account of how it works.</p>
+
+<!-- 9 DIVISION OF WORK -->
+<h2>9. Division of Work</h2>
+<p>The project was carried out by a group of four, and the work was divided so that every member held a clear area of responsibility while still contributing to shared tasks such as testing and report writing. The division is shown in the table below.</p>
+<table class="data">
+  <tr><th>Member</th><th>Main responsibility</th><th>Shared tasks</th></tr>
+  <tr><td>[Name 1]</td><td>Game logic and the styling screen</td><td>Testing, report sections 5 and 8</td></tr>
+  <tr><td>[Name 2]</td><td>Gamification mechanics and bias research</td><td>Report sections 4 and 6</td></tr>
+  <tr><td>[Name 3]</td><td>Visual assets, avatar, and item art</td><td>Figures, report formatting</td></tr>
+  <tr><td>[Name 4]</td><td>Project management and testing plan</td><td>Report sections 1 to 3, references</td></tr>
+</table>
+<p>Weekly meetings were held so that progress could be tracked and so that blockers could be raised early. A shared repository was used for the game files, and a shared document was used for the report, which allowed work to be merged without large conflicts.</p>
+
+<!-- 10 PROJECT PLAN -->
+<h2>10. Project Plan</h2>
+<p>The project was planned across an eight week period. The plan is shown in Figure 4 as a simple bar chart of the main tasks. Research and the game build were placed early so that the gamification layer could be added once a working game existed, and time was reserved at the end for testing and for writing the report.</p>
+<figure>
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+  <g>
+    <line x1="200" y1="30" x2="200" y2="270" stroke="#cfcfcf"/>
+    <line x1="265" y1="30" x2="265" y2="270" stroke="#eee"/>
+    <line x1="330" y1="30" x2="330" y2="270" stroke="#eee"/>
+    <line x1="395" y1="30" x2="395" y2="270" stroke="#eee"/>
+    <line x1="460" y1="30" x2="460" y2="270" stroke="#eee"/>
+    <line x1="525" y1="30" x2="525" y2="270" stroke="#eee"/>
+    <line x1="590" y1="30" x2="590" y2="270" stroke="#eee"/>
+    <line x1="655" y1="30" x2="655" y2="270" stroke="#eee"/>
+    <text x="200" y="22" text-anchor="middle">W1</text>
+    <text x="265" y="22" text-anchor="middle">W2</text>
+    <text x="330" y="22" text-anchor="middle">W3</text>
+    <text x="395" y="22" text-anchor="middle">W4</text>
+    <text x="460" y="22" text-anchor="middle">W5</text>
+    <text x="525" y="22" text-anchor="middle">W6</text>
+    <text x="590" y="22" text-anchor="middle">W7</text>
+    <text x="655" y="22" text-anchor="middle">W8</text>
+
+    <text x="10" y="55">Research</text>
+    <rect x="200" y="44" width="130" height="16" fill="#2f5d62"/>
+    <text x="10" y="90">Game build</text>
+    <rect x="265" y="79" width="195" height="16" fill="#2f5d62"/>
+    <text x="10" y="125">Gamification layer</text>
+    <rect x="395" y="114" width="195" height="16" fill="#2f5d62"/>
+    <text x="10" y="160">Testing</text>
+    <rect x="525" y="149" width="130" height="16" fill="#b0413e"/>
+    <text x="10" y="195">Report writing</text>
+    <rect x="460" y="184" width="195" height="16" fill="#7a7a7a"/>
+    <text x="10" y="230">Review and submit</text>
+    <rect x="590" y="219" width="65" height="16" fill="#7a7a7a"/>
+  </g>
+</svg>
+<figcaption>Figure 4. Project plan across eight weeks. Tasks were overlapped where this was safe to do.</figcaption>
+</figure>
+
+<!-- 11 CONCLUSION -->
+<h2>11. Conclusion</h2>
+<p>A small game was built, and a gamification layer was added to it so that the link between design and behaviour could be shown in practice. Five techniques were selected, and each was matched to a named bias and built into the game. The way these techniques combine to hold attention was explained, and the expected effect on retention was set out. The work showed that engagement can be produced by acting on predictable weaknesses in human reasoning, and it also showed that this power carries a responsibility, since the same mechanics that keep a player engaged can also keep a player hooked against their own wishes. That tension is taken up again in the second report, where the question of making money from the game is examined.</p>
+
+<!-- 12 REFERENCES -->
+<h2>12. References</h2>
+<p style="font-family:'Segoe UI',Arial,sans-serif;font-size:0.9rem;">
+Deterding, S., Dixon, D., Khaled, R. and Nacke, L. (2011) From game design elements to gamefulness. Proceedings of the 15th International Academic MindTrek Conference.<br><br>
+Kahneman, D. (2011) Thinking, Fast and Slow. Farrar, Straus and Giroux.<br><br>
+Skinner, B. F. (1953) Science and Human Behavior. Macmillan.<br><br>
+Zichermann, G. and Cunningham, C. (2011) Gamification by Design. O'Reilly Media.<br><br>
+[Add further sources used by the group in the agreed citation style.]
+</p>
+
+</div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"f68081eec08b4f8bab849349d561a87c","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

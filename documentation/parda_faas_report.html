@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enterprise Project Report - Parda Faas</title>
+<style>
+  :root {
+    --ink: #1c1c1c;
+    --muted: #555;
+    --line: #cfcfcf;
+    --accent: #c0392b;
+    --accent2: #ff6b00;
+    --soft: #fdf5f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--ink);
+    line-height: 1.65;
+    margin: 0;
+    background: #fff;
+  }
+  .page {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 48px 56px;
+  }
+  h1, h2, h3 {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.25;
+    color: var(--ink);
+  }
+  h2 {
+    font-size: 1.35rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 6px;
+    margin-top: 42px;
+  }
+  h3 { font-size: 1.08rem; margin-top: 28px; color: var(--accent); }
+  p { margin: 14px 0; text-align: justify; }
+  a { color: var(--accent); }
+
+  /* COVER */
+  .cover {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+  }
+  .cover .module {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .cover h1 {
+    font-size: 2.6rem;
+    margin: 14px 0 4px;
+  }
+  .cover .nepali {
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin: 0 0 8px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+  .cover .sub {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 1.15rem;
+  }
+  .cover .meta {
+    margin-top: 40px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+  .cover .meta table { margin: 0 auto; border-collapse: collapse; }
+  .cover .meta td { padding: 4px 10px; text-align: left; }
+  .cover .meta td:first-child { color: var(--muted); text-align: right; }
+
+  /* ABSTRACT */
+  .abstract {
+    background: var(--soft);
+    border-left: 4px solid var(--accent);
+    padding: 16px 22px;
+    margin: 24px 0;
+  }
+
+  /* KEYWORDS */
+  .keywords {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 0.92rem;
+  }
+  .keywords span {
+    display: inline-block;
+    background: var(--soft);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 3px 9px;
+    margin: 3px 4px 3px 0;
+  }
+
+  /* TABLES */
+  table.data {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 0.92rem;
+    margin: 18px 0;
+  }
+  table.data th, table.data td {
+    border: 1px solid var(--line);
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  table.data th { background: var(--accent); color: #fff; }
+  table.data tr:nth-child(even) td { background: var(--soft); }
+
+  /* TOC */
+  .toc ol { font-family: 'Segoe UI', Arial, sans-serif; line-height: 2; }
+
+  /* FIGURES */
+  figure {
+    margin: 26px 0;
+    text-align: center;
+  }
+  figure svg { max-width: 100%; height: auto; border: 1px solid var(--line); background: #fff; }
+  figcaption {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+
+  /* QUOTE */
+  .quote {
+    font-style: italic;
+    border-left: 3px solid var(--accent);
+    padding-left: 16px;
+    color: var(--muted);
+    margin: 18px 0;
+  }
+
+  /* DIVIDER */
+  .pagebreak { border: 0; border-top: 1px dashed var(--line); margin: 40px 0; }
+
+  @media print {
+    .page { padding: 0; max-width: 100%; }
+    .cover { min-height: 96vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     COVER PAGE
+═══════════════════════════════════════════════════════════ -->
+<section class="page cover">
+  <div class="module">Enterprise Project Module</div>
+  <h1>Parda Faas</h1>
+  <div class="nepali">पर्दाफास</div>
+  <div class="sub">Nepal's First Civic Investigation Platformer — Gamification and Human Bias in a Browser Game</div>
+  <div class="meta">
+    <table>
+      <tr><td>Group:</td><td>Group [Insert Group No.]</td></tr>
+      <tr><td>Members:</td><td>Abhishek Adhikari, Bishrut Dhwoju, Sagar Bajgain, Sanjit Hyanju</td></tr>
+      <tr><td>Programme:</td><td>BSc (Hons) Computing / Artificial Intelligence</td></tr>
+      <tr><td>Module Code:</td><td>ENT-301</td></tr>
+      <tr><td>Submission Date:</td><td>[Insert Date]</td></tr>
+      <tr><td>Word Count:</td><td>[Insert Count]</td></tr>
+    </table>
+  </div>
+</section>
+
+<div class="page">
+
+<!-- ═══════════════════════════════════════════════════════════
+     EXECUTIVE SUMMARY
+═══════════════════════════════════════════════════════════ -->
+<h2>Executive Summary</h2>
+<div class="abstract">
+<p>Parda Faas (पर्दाफास), meaning "to expose" in Nepali, is a browser-based civic investigation platformer game built by the group to study how gamification techniques drive player engagement when they are grounded in real human psychology rather than surface-level reward design. The game casts the player as a press investigator collecting evidence, interviewing witnesses, rejecting bribes, and publishing an exposé against corrupt government officials across five levels modelled on Nepal's governance tiers, from ward councillor to cabinet minister.</p>
+<p>The technical build uses Phaser 3 with Vite, runs entirely in the browser with keyboard controls, and requires no installation. The gamification layer sits above the game mechanics and was the primary focus of the group's design work. Twenty engagement techniques were identified from behavioural research and mapped to specific cognitive biases. Eight of these were implemented in the Phase 1 prototype. The most structurally significant are the extinction burst mechanic, which applies loss aversion to daily login streaks; the affect heuristic, which uses emotional cutscene framing to make evidence collection feel meaningful; and the peak experience design, which delivers a full animated newspaper cinematic at the moment of case completion. This report explains each technique, names the bias behind it, and accounts honestly for the points at which engagement and manipulation become difficult to tell apart.</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     KEYWORDS
+═══════════════════════════════════════════════════════════ -->
+<h2>Keywords</h2>
+<p class="keywords">
+<span>Gamification</span><span>Civic Education</span><span>Player Engagement</span>
+<span>Cognitive Bias</span><span>Loss Aversion</span><span>Affect Heuristic</span>
+<span>Platformer Game</span><span>Browser Game</span><span>Phaser 3</span>
+<span>Extinction Burst</span><span>Behavioural Design</span><span>Nepali Context</span>
+<span>Anti-Corruption</span><span>Peak Experience</span>
+</p>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TABLE OF CONTENTS
+═══════════════════════════════════════════════════════════ -->
+<h2>Table of Contents</h2>
+<div class="toc">
+<ol>
+  <li>Introduction</li>
+  <li>Motivation</li>
+  <li>Aim and Objectives</li>
+  <li>Background and Related Work</li>
+  <li>The Game Concept</li>
+  <li>Gamification Techniques and the Biases They Exploit</li>
+  <li>How Engagement Is Achieved</li>
+  <li>Design and Implementation Overview</li>
+  <li>Division of Work</li>
+  <li>Project Plan</li>
+  <li>Conclusion</li>
+  <li>References</li>
+</ol>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TABLE OF FIGURES
+═══════════════════════════════════════════════════════════ -->
+<h2>Table of Figures</h2>
+<div class="toc">
+<ol>
+  <li>Figure 1. The core investigation loop of Parda Faas</li>
+  <li>Figure 2. Mapping of gamification techniques to cognitive biases</li>
+  <li>Figure 3. Expected effect of the gamification layer on player retention</li>
+  <li>Figure 4. Project plan and timeline across eight weeks</li>
+</ol>
+</div>
+
+<hr class="pagebreak">
+
+<!-- ═══════════════════════════════════════════════════════════
+     1. INTRODUCTION
+═══════════════════════════════════════════════════════════ -->
+<h2>1. Introduction</h2>
+<p>The question of why people keep playing a game, or keep opening an application, is rarely answered by pointing to the quality of the content alone. A large share of the answer lies in how the experience has been structured around predictable features of human psychology. These structures are collected under the term gamification, which describes the deliberate use of game design elements to influence behaviour in contexts that may or may not themselves be games.</p>
+<p>This project applies that idea to a domain where the stakes feel real: civic accountability in Nepal. The group built a browser-based investigation platformer called Parda Faas, in which a player takes on the role of a press investigator and works through a series of corruption cases against government officials at progressively higher levels of power. The game was designed so that the gamification layer could be studied in a working build rather than only discussed in the abstract. The choice to set the game in a Nepali civic context was deliberate: it tests whether the engagement techniques function when the subject matter carries genuine emotional weight, and it allows the group to explore whether a game can simultaneously entertain and educate.</p>
+<p>As with the module brief, the technical scale of the game was kept deliberately manageable. The marks for this submission are earned by demonstrating that gamification is understood at a psychological level and that it can be applied with intention and honesty. The effort of the group was placed there accordingly.</p>
+
+<!-- ═══════════════════════════════════════════════════════════
+     2. MOTIVATION
+═══════════════════════════════════════════════════════════ -->
+<h2>2. Motivation</h2>
+<p>The primary motivation for Parda Faas came from a frustration that several members of the group shared. News of corruption in Nepal moves through social media quickly and then disappears just as quickly, because the audience has been designed to move on. The recommendation algorithms that drive those platforms use a version of the same variable reward mechanics that are studied in this module. It seemed worth asking whether those same mechanics could be turned in a different direction, and whether the desire to keep playing could be tied to a civic rather than a commercial purpose.</p>
+<p>A second motivation was analytical. As students of computing and artificial intelligence, the group is trained to look for the system behind the behaviour. Gamification is one of the clearest examples available of a system that produces measurable changes in human behaviour through design alone, without any change in the underlying facts or incentives. Understanding that system from the inside, by building its components, was judged to be more instructive than reading about it.</p>
+<p>A third motivation was the specific set of cognitive biases selected for this project. Loss aversion, the affect heuristic, the bystander effect, self-fulfilling prophecy, and the extinction burst are each well documented in the psychological literature. Each also maps cleanly onto a mechanic that is visible in games and applications that the group uses daily. Making those mappings explicit, and then building them, made the invisible machinery of engagement legible.</p>
+
+<!-- ═══════════════════════════════════════════════════════════
+     3. AIM AND OBJECTIVES
+═══════════════════════════════════════════════════════════ -->
+<h2>3. Aim and Objectives</h2>
+<p>The aim of the project is to build a functional browser game and to demonstrate, through that game, how gamification techniques use documented cognitive biases to sustain player engagement in the context of civic investigation.</p>
+<p>The following objectives were set in order to reach that aim:</p>
+<table class="data">
+  <tr><th>No.</th><th>Objective</th></tr>
+  <tr><td>O1</td><td>A playable browser-based game is to be built with a clear core loop: investigate, collect evidence, reject bribes, publish exposé.</td></tr>
+  <tr><td>O2</td><td>A set of cognitive biases relevant to engagement and retention is to be researched and selected from the behavioural literature.</td></tr>
+  <tr><td>O3</td><td>A gamification technique is to be matched to each selected bias and justified by that match.</td></tr>
+  <tr><td>O4</td><td>The matched techniques are to be built into the game as working mechanics, not only described.</td></tr>
+  <tr><td>O5</td><td>The expected effect of each technique on engagement and retention is to be explained clearly.</td></tr>
+  <tr><td>O6</td><td>The ethical limits of using bias-based engagement, particularly in a civic education context, are to be discussed honestly.</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════════
+     4. BACKGROUND AND RELATED WORK
+═══════════════════════════════════════════════════════════ -->
+<h2>4. Background and Related Work</h2>
+<p>Gamification has been defined as the use of game design elements in non-game contexts (Deterding et al., 2011). The power of those elements is not mechanical. It comes from their interaction with cognitive shortcuts that human decision-making relies on. Research in behavioural economics, particularly the work of Kahneman (2011), has shown that human reasoning consistently diverges from a purely rational model in ways that are predictable and stable. These divergences are the foundation on which gamification mechanics operate.</p>
+<p>Loss aversion, one of the most replicated findings in behavioural research, describes the observation that the psychological pain of a loss is approximately twice as large as the pleasure of an equivalent gain (Tversky and Kahneman, 1991). Streak mechanics in games exploit this directly. The affect heuristic describes the way emotional state influences judgement and decision speed (Slovic et al., 2007): when something feels important, it is processed as important regardless of its objective weight. The extinction burst, drawn from operant conditioning research (Skinner, 1953), describes the increase in a behaviour that occurs just before the behaviour is extinguished by the removal of reinforcement. In game design terms, this is the mechanism behind urgency notifications.</p>
+<p>The civic gaming space has seen limited but notable work. Games such as Papers Please and Democracy 4 have demonstrated that political subject matter can sustain engagement when the mechanics are tightly linked to the theme. Parda Faas differs from these precedents in that it is built for a specific national context, uses real public figures as satirical archetypes, and places gamification, rather than simulation depth, at the centre of the design.</p>
+
+<!-- ═══════════════════════════════════════════════════════════
+     5. THE GAME CONCEPT
+═══════════════════════════════════════════════════════════ -->
+<h2>5. The Game Concept</h2>
+<p>Parda Faas is a keyboard-controlled side-scrolling platformer that runs in the browser. The player chooses one of seven playable investigator characters, each modelled as a satirical caricature of a real Nepali public figure and given a unique special ability tied to their public persona. The player then enters a level representing a tier of Nepal's governance structure, from a ward office at the most accessible end to Singha Durbar, the seat of federal government, at the hardest.</p>
+<p>Inside each level, the player moves through a 2D environment, collects evidence items, talks to witness NPCs, and avoids or neutralises countermoves launched by the target official. These countermoves include hired thugs who slow the player's movement, misinformation clouds that obscure part of the screen, and bribe offers delivered as status-framed insults. When enough valid evidence has been gathered, the player publishes an exposé by pressing a single key, which triggers a cinematic newspaper reveal. The session ends with a result screen that debriefs the player using language that attributes any failure to external obstacles rather than to the player's own shortcomings. This framing is itself a gamification technique, drawn from the self-serving bias literature.</p>
+<p>The core loop of the game is shown in Figure 1 below.</p>
+
+<figure>
+<svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" font-size="13">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#c0392b"/>
+    </marker>
+  </defs>
+  <!-- Nodes -->
+  <rect x="20" y="128" width="120" height="54" rx="8" fill="#fdf5f4" stroke="#c0392b"/>
+  <text x="80" y="150" text-anchor="middle">Open game</text>
+  <text x="80" y="168" text-anchor="middle">(daily login)</text>
+
+  <rect x="200" y="40" width="130" height="54" rx="8" fill="#fdf5f4" stroke="#c0392b"/>
+  <text x="265" y="63" text-anchor="middle">Choose character</text>
+  <text x="265" y="81" text-anchor="middle">&amp; case</text>
+
+  <rect x="400" y="40" width="130" height="54" rx="8" fill="#fdf5f4" stroke="#c0392b"/>
+  <text x="465" y="63" text-anchor="middle">Collect evidence,</text>
+  <text x="465" y="81" text-anchor="middle">reject bribes</text>
+
+  <rect x="590" y="128" width="130" height="54" rx="8" fill="#fdf5f4" stroke="#c0392b"/>
+  <text x="655" y="151" text-anchor="middle">Publish exposé</text>
+  <text x="655" y="169" text-anchor="middle">(cinematic)</text>
+
+  <rect x="400" y="220" width="130" height="54" rx="8" fill="#fdf5f4" stroke="#c0392b"/>
+  <text x="465" y="243" text-anchor="middle">Result screen:</text>
+  <text x="465" y="261" text-anchor="middle">debrief &amp; share</text>
+
+  <rect x="200" y="220" width="130" height="54" rx="8" fill="#fdf5f4" stroke="#c0392b"/>
+  <text x="265" y="243" text-anchor="middle">Streak rises,</text>
+  <text x="265" y="261" text-anchor="middle">rank increases</text>
+
+  <!-- Arrows -->
+  <path d="M140,148 L198,80" stroke="#c0392b" fill="none" marker-end="url(#arrow)"/>
+  <path d="M330,67 L398,67" stroke="#c0392b" fill="none" marker-end="url(#arrow)"/>
+  <path d="M530,80 L612,128" stroke="#c0392b" fill="none" marker-end="url(#arrow)"/>
+  <path d="M655,182 L545,228" stroke="#c0392b" fill="none" marker-end="url(#arrow)"/>
+  <path d="M400,247 L332,247" stroke="#c0392b" fill="none" marker-end="url(#arrow)"/>
+  <path d="M238,220 L130,185" stroke="#c0392b" fill="none" marker-end="url(#arrow)"/>
+</svg>
+<figcaption>Figure 1. The core investigation loop of Parda Faas. The loop closes with a reason to return daily, driven by streak and rank mechanics.</figcaption>
+</figure>
+
+<!-- ═══════════════════════════════════════════════════════════
+     6. GAMIFICATION TECHNIQUES AND BIASES
+═══════════════════════════════════════════════════════════ -->
+<h2>6. Gamification Techniques and the Biases They Exploit</h2>
+<p>This section forms the analytical core of the report. For each technique, the mechanic as it exists in the game is described, the bias on which it relies is named and explained, and the expected engagement effect is stated. It is acknowledged throughout that these mechanics work by acting on predictable weaknesses in human reasoning. That acknowledgement is kept in view so that the ethical discussion later in the report is grounded in the same honesty.</p>
+
+<h3>6.1 Extinction Burst — Daily Streak Urgency</h3>
+<p>A flame icon in the HUD tracks the player's consecutive daily login streak. If twelve hours pass without a login when a case is open, a warning notification fires: "Your case goes cold — evidence is being destroyed." The visual representation of the case file begins to grey out, and evidence icons fade. This is a direct application of the extinction burst principle from operant conditioning research (Skinner, 1953). When a reinforcement schedule is about to be withdrawn, the targeted behaviour increases sharply before it stops. The game manufactures that withdrawal threat artificially, so that the peak of urgency occurs precisely when the player is most likely to disengage, pulling them back before disengagement becomes permanent.</p>
+
+<h3>6.2 Priming — Investigative Language and Loading Screen</h3>
+<p>The game's interface uses the language of journalism and investigation throughout. The player is never called a "player" and the game is never called a "game." A scrolling news ticker on the loading screen shows fictional Nepali scandal headlines before a single mechanic is introduced. These choices exploit the priming effect (Bargh et al., 1996), which describes the way that exposure to a set of concepts makes related concepts more accessible in subsequent thought. A player who has read about "budget misappropriation" and "ghost projects" for thirty seconds before the first level begins is primed to treat the subsequent evidence collection as meaningful rather than arbitrary.</p>
+
+<h3>6.3 Affect Heuristic — Emotional Cutscene Framing</h3>
+<p>Each level opens with a short animated cutscene. Level 1 shows a broken road with children walking around a pothole and the text "₹2 crore allocated. Road: still broken." Level 5 shows an empty school that exists only on paper. The UI palette shifts from a dark investigative tone to a bright gold when evidence connects. These choices exploit the affect heuristic (Slovic et al., 2007), which describes the way that emotional state at the time of a decision influences the weight given to that decision. A player who feels something when collecting a document collects with more attention than a player who feels nothing. The heuristic makes the evidence feel worth finding, which keeps the player inside the loop.</p>
+
+<h3>6.4 Reversed Bystander Effect — Neglected Case Notice</h3>
+<p>The main menu displays a panel showing how long a particular case has been neglected and how many investigators are currently working on it. The figure shown is zero. A tooltip reads: "If not you, who?" The bystander effect (Darley and Latané, 1968) describes the tendency of individuals to take less action when others are present, because responsibility is diffused. By making the absence of other investigators visible, the game reverses this dynamic: responsibility is concentrated on the single player who sees the notice, which increases the likelihood that they will start the case.</p>
+
+<h3>6.5 Self-Fulfilling Prophecy — Rank and Reputation Feedback</h3>
+<p>After each session, the player sees a stat panel reporting their performance relative to other investigators that week. The rank system moves from Rookie through Field Reporter, Correspondent, and Senior Journalist to Editor-in-Chief. Witness NPCs respond differently depending on the player's reputation: at low reputation, witnesses hesitate and express doubt; at high reputation, they lean forward and say "you exposed the Ward case — I'll talk." This exploits the self-fulfilling prophecy dynamic (Merton, 1948), in which a belief about one's capability, once stated back by the environment, produces the behaviour that confirms it. A player told they are in the top ten percent of investigators this week is more likely to behave like an investigator in the next session.</p>
+
+<h3>6.6 Learned Helplessness Countermeasure — Failure Language</h3>
+<p>When a level ends without a completed case, the result screen never displays "Investigation Failed" or "You Lost." It always presents a structured debrief: "You were outmaneuvered — three allies protected this evidence chain" or "The witness was silenced before your timing was right." Three consecutive losses trigger a "Rookie Shield" that removes one countermove layer on the next attempt. This design responds to the learned helplessness phenomenon (Seligman, 1972), in which repeated exposure to failure attributed to the self produces a cessation of effort. By locating failure externally and reducing objective difficulty after repeated attempts, the game prevents the disengagement that learned helplessness produces.</p>
+
+<h3>6.7 Peak Experience Design — The Cinematic Exposé Moment</h3>
+<p>When the player publishes an exposé, the screen fades to black. A typewriter sound builds. An animated newspaper front page generates with the player's name as the byline and the official's name in the headline. A corruption network diagram animates, connecting the dots of collected evidence. Confetti and a crowd cheer accompany the reveal. A shareable card is generated for download. This moment is the "peak experience" of Csikszentmihalyi's flow theory (1990), designed to be so distinctly satisfying that it anchors the player's memory of the session positively. The shareable card extends this into a social proof mechanism, since a player who posts the card has publicly identified as a civic investigator, and consistency pressure (Cialdini, 2001) makes it more likely they will continue playing to maintain that identity.</p>
+
+<h3>6.8 Spotlight Effect — Social Broadcasting</h3>
+<p>When a player publishes an exposé, a "Breaking Investigation" banner scrolls across the lobby screens of all currently online players for ten seconds. The shareable card is formatted as a news alert: "BREAKING — Parda Faas Investigation: [Player] exposes [Official]. Case credibility: 94%." The spotlight effect (Gilovich et al., 2000) describes the tendency to overestimate how much other people notice one's actions. By making that attention real, the game converts an existing cognitive tendency into an actual social event, which deepens the player's investment in their investigator identity and raises the cost of abandoning the game.</p>
+
+<!-- FIGURE 2: Technique to Bias Mapping -->
+<figure>
+<svg viewBox="0 0 760 390" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+  <g>
+    <!-- Header -->
+    <rect x="20" y="20" width="210" height="44" rx="6" fill="#c0392b"/>
+    <text x="125" y="47" text-anchor="middle" fill="#fff">Technique</text>
+    <rect x="240" y="20" width="210" height="44" rx="6" fill="#c0392b"/>
+    <text x="345" y="47" text-anchor="middle" fill="#fff">Bias exploited</text>
+    <rect x="460" y="20" width="280" height="44" rx="6" fill="#c0392b"/>
+    <text x="600" y="47" text-anchor="middle" fill="#fff">Engagement effect</text>
+
+    <!-- Rows -->
+    <g font-size="11.5">
+    <rect x="20" y="74" width="210" height="44" fill="#fdf5f4" stroke="#cfcfcf"/>
+    <text x="30" y="100">Extinction burst</text>
+    <rect x="240" y="74" width="210" height="44" fill="#fff" stroke="#cfcfcf"/>
+    <text x="250" y="100">Loss aversion (streak loss)</text>
+    <rect x="460" y="74" width="280" height="44" fill="#fff" stroke="#cfcfcf"/>
+    <text x="470" y="100">Forces daily return before disengagement</text>
+
+    <rect x="20" y="118" width="210" height="44" fill="#fdf5f4" stroke="#cfcfcf"/>
+    <text x="30" y="144">Priming (news ticker)</text>
+    <rect x="240" y="118" width="210" height="44" fill="#fff" stroke="#cfcfcf"/>
+    <text x="250" y="144">Associative priming</text>
+    <rect x="460" y="118" width="280" height="44" fill="#fff" stroke="#cfcfcf"/>
+    <text x="470" y="144">Makes investigation feel meaningful</text>
+
+    <rect x="20" y="162" width="210" height="44" fill="#fdf5f4" stroke="#cfcfcf"/>
+    <text x="30" y="188">Affect heuristic (cutscene)</text>
+    <rect x="240" y="162" width="210" height="44" fill="#fff" stroke="#cfcfcf"/>
+    <text x="250" y="188">Affect heuristic</text>
+    <rect x="460" y="162" width="280" height="44" fill="#fff" stroke="#cfcfcf"/>
+    <text x="470" y="188">Raises attention during evidence collection</text>
+
+    <rect x="20" y="206" width="210" height="44" fill="#fdf5f4" stroke="#cfcfcf"/>
+    <text x="30" y="232">Reversed bystander</text>
+    <rect x="240" y="206" width="210" height="44" fill="#fff" stroke="#cfcfcf"/>
+    <text x="250" y="232">Bystander effect (reversed)</text>
+    <rect x="460" y="206" width="280" height="44" fill="#fff" stroke="#cfcfcf"/>
+    <text x="470" y="232">Concentrates civic responsibility</text>
+
+    <rect x="20" y="250" width="210" height="44" fill="#fdf5f4" stroke="#cfcfcf"/>
+    <text x="30" y="276">Rank feedback loop</text>
+    <rect x="240" y="250" width="210" height="44" fill="#fff" stroke="#cfcfcf"/>
+    <text x="250" y="276">Self-fulfilling prophecy</text>
+    <rect x="460" y="250" width="280" height="44" fill="#fff" stroke="#cfcfcf"/>
+    <text x="470" y="276">Deepens investigator identity</text>
+
+    <rect x="20" y="294" width="210" height="44" fill="#fdf5f4" stroke="#cfcfcf"/>
+    <text x="30" y="320">Failure language</text>
+    <rect x="240" y="294" width="210" height="44" fill="#fff" stroke="#cfcfcf"/>
+    <text x="250" y="320">Learned helplessness prevention</text>
+    <rect x="460" y="294" width="280" height="44" fill="#fff" stroke="#cfcfcf"/>
+    <text x="470" y="320">Sustains retry behaviour</text>
+
+    <rect x="20" y="338" width="210" height="44" fill="#fdf5f4" stroke="#cfcfcf"/>
+    <text x="30" y="364">Peak experience / cinematic</text>
+    <rect x="240" y="338" width="210" height="44" fill="#fff" stroke="#cfcfcf"/>
+    <text x="250" y="364">Peak-end rule (Kahneman)</text>
+    <rect x="460" y="338" width="280" height="44" fill="#fff" stroke="#cfcfcf"/>
+    <text x="470" y="364">Anchors memory of session positively</text>
+    </g>
+  </g>
+</svg>
+<figcaption>Figure 2. Mapping of the eight implemented gamification techniques to the cognitive biases on which they rely, with expected engagement effect.</figcaption>
+</figure>
+
+<!-- ═══════════════════════════════════════════════════════════
+     7. HOW ENGAGEMENT IS ACHIEVED
+═══════════════════════════════════════════════════════════ -->
+<h2>7. How Engagement Is Achieved</h2>
+<p>Engagement in Parda Faas is not produced by any single technique. It is produced by the way the techniques are layered in time so that when one source of motivation weakens, another is already active. The streak mechanic provides the daily pull at the lowest level: the player who has a case open and has not returned in eleven hours receives a warning, and the cost of not returning is felt as a loss rather than a missed gain. Once the player is inside the game, the affect heuristic takes over: the emotional weight of the opening cutscene raises the value of what follows. Variable NPC dialogue tied to the player's reputation level gives the investigation the texture of a world that responds to the player's presence. The peak experience of the newspaper cinematic at the end of a successful case anchors the memory of the session strongly enough that the next session is anticipated rather than chosen under duress. The shareable card converts that memory into a social artefact that reinforces the player's public identity as a civic investigator.</p>
+
+<p>These mechanisms combine to produce a retention effect that no single mechanic would achieve alone. The expected shape of that effect is shown in Figure 3. A game without the gamification layer tends to lose the majority of its players within the first week, as the novelty of the mechanic fades and no other reason to return has been established. A game with the full layer in place is expected to retain a higher share across the same period because the reasons to return are staggered: the streak fires daily, the rank progression fires weekly, and the peak experience fires at case completion regardless of the time between sessions.</p>
+
+<p>The group noted during development that this layering produces an effect that is not always comfortable to observe. One member who tested the prototype described their response honestly:</p>
+
+<p class="quote">"I knew I was only opening it to keep the streak. I did not want to play. But the case file was going grey and I felt genuinely anxious about it. That surprised me."</p>
+
+<p>This response is the extinction burst working as designed. It was recorded because it captures precisely the point at which engagement and compulsion are difficult to separate, and that distinction is taken up in the conclusion of this report.</p>
+
+<!-- FIGURE 3: Retention Curve -->
+<figure>
+<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" font-size="13">
+  <g>
+    <line x1="70" y1="40" x2="70" y2="260" stroke="#1c1c1c"/>
+    <line x1="70" y1="260" x2="680" y2="260" stroke="#1c1c1c"/>
+    <text x="20" y="155" transform="rotate(-90 20 155)" text-anchor="middle">Players retained (%)</text>
+    <text x="375" y="295" text-anchor="middle">Days since first session</text>
+
+    <text x="70" y="280" text-anchor="middle">0</text>
+    <text x="222" y="280" text-anchor="middle">7</text>
+    <text x="375" y="280" text-anchor="middle">14</text>
+    <text x="527" y="280" text-anchor="middle">21</text>
+    <text x="680" y="280" text-anchor="middle">28</text>
+
+    <!-- No gamification -->
+    <polyline points="70,60 222,175 375,222 527,244 680,255" fill="none" stroke="#b0413e" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <!-- With gamification -->
+    <polyline points="70,60 222,105 375,128 527,145 680,158" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+
+    <line x1="430" y1="57" x2="444" y2="57" stroke="#c0392b" stroke-width="2.5"/>
+    <text x="452" y="62">With gamification layer</text>
+    <line x1="430" y1="80" x2="444" y2="80" stroke="#b0413e" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <text x="452" y="85">Without gamification layer</text>
+  </g>
+</svg>
+<figcaption>Figure 3. Expected effect of the gamification layer on player retention over 28 days. Values are illustrative; the shape, not the numbers, is the point being made.</figcaption>
+</figure>
+
+<!-- ═══════════════════════════════════════════════════════════
+     8. DESIGN AND IMPLEMENTATION OVERVIEW
+═══════════════════════════════════════════════════════════ -->
+<h2>8. Design and Implementation Overview</h2>
+<p>The game was built using Phaser 3.88, an open-source HTML5 game framework, bundled through Vite and run entirely in the browser. The choice of a browser-based build was made to remove any installation barrier for players and to allow deployment on a static hosting service. The physics engine used is Phaser's built-in Arcade Physics, which is sufficient for the side-scrolling platformer format and requires no external library. Character portraits and placeholder sprites were generated programmatically using Phaser's Graphics API, with a fallback system that loads any real spritesheets placed in the appropriate asset directories without requiring a code change.</p>
+<p>The gamification mechanics are implemented as a layer of JavaScript systems that sit above the game physics. The streak and player profile are held in the browser's localStorage, which means they persist between sessions without a server. The evidence system tracks collected items, detects red herrings, and calculates a credibility score. The bribe system generates status-framed offers at timed intervals and requires a deliberate key hold of three seconds to accept, making accidental acceptance impossible. The peak experience cinematic is produced by Phaser's tween and particle systems, and the shareable card is generated using the html2canvas library, which captures a formatted HTML element as a downloadable PNG.</p>
+<p>The game is structured across eight Phaser scenes: BootScene, MainMenuScene, TutorialScene, Level1Scene, LevelSelectScene, CinematicScene, and ResultScene. This separation keeps each responsibility contained. The gamification hooks fire as events that cross scene boundaries rather than being embedded in any single scene, which makes them easier to modify as the project grows toward Phase 2.</p>
+<p>The technical build was kept at a scale that a group of four could complete without sacrificing the quality of the gamification layer. The aim was not a polished commercial product but a working demonstration of every mechanic described in this report.</p>
+
+<!-- ═══════════════════════════════════════════════════════════
+     9. DIVISION OF WORK
+═══════════════════════════════════════════════════════════ -->
+<h2>9. Division of Work</h2>
+<p>The project was carried out by a group of four members. Work was divided so that each member held a clear area of primary responsibility while all members contributed to shared tasks including internal testing, feedback sessions, and report writing. The division is shown in the table below.</p>
+<table class="data">
+  <tr><th>Member</th><th>Primary responsibility</th><th>Shared contributions</th></tr>
+  <tr>
+    <td>Abhishek Adhikari</td>
+    <td>Game architecture, Phaser 3 scene system, core platformer engine (GameScene.js), character loader, main entry point and Vite configuration</td>
+    <td>Report sections 5 and 8, system integration testing</td>
+  </tr>
+  <tr>
+    <td>Bishrut Dhwoju</td>
+    <td>Gamification systems design, evidence and bribe system implementation, streak and player profile (StreakSystem.js), gamification technique research</td>
+    <td>Report sections 4 and 6, bias literature review</td>
+  </tr>
+  <tr>
+    <td>Sagar Bajgain</td>
+    <td>Visual design, character portrait art direction, HUD layout, procedural texture generation in BootScene, cinematic scene (CinematicScene.js)</td>
+    <td>Figures 1 to 4, report formatting, result and debrief screen</td>
+  </tr>
+  <tr>
+    <td>Sanjit Hyanju</td>
+    <td>Level configuration and content design, Nepali localisation strings, tutorial design and NPC dialogue, level select and result scenes, project planning</td>
+    <td>Report sections 1 to 3 and 9 to 12, weekly meeting facilitation, final review</td>
+  </tr>
+</table>
+<p>Weekly meetings were held throughout the project. A shared version-controlled repository was used for the game source files, and a shared document was used for the report, which allowed contributions to be merged without conflicts. Decisions about the gamification layer were made collectively, with each member reviewing the psychological justification before a mechanic was built.</p>
+
+<!-- ═══════════════════════════════════════════════════════════
+     10. PROJECT PLAN
+═══════════════════════════════════════════════════════════ -->
+<h2>10. Project Plan</h2>
+<p>The project was planned across an eight-week period. Research and concept development were placed in the first two weeks so that the gamification design could be grounded in the literature before any code was written. The game build followed in weeks two through four, after which the gamification layer was added and tested. Report writing ran in parallel with testing in the final three weeks, and the review and submission process occupied the last week. The plan is shown in Figure 4.</p>
+
+<figure>
+<svg viewBox="0 0 760 310" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+  <g>
+    <!-- Grid lines -->
+    <line x1="210" y1="30" x2="210" y2="278" stroke="#cfcfcf"/>
+    <line x1="275" y1="30" x2="275" y2="278" stroke="#eee"/>
+    <line x1="340" y1="30" x2="340" y2="278" stroke="#eee"/>
+    <line x1="405" y1="30" x2="405" y2="278" stroke="#eee"/>
+    <line x1="470" y1="30" x2="470" y2="278" stroke="#eee"/>
+    <line x1="535" y1="30" x2="535" y2="278" stroke="#eee"/>
+    <line x1="600" y1="30" x2="600" y2="278" stroke="#eee"/>
+    <line x1="665" y1="30" x2="665" y2="278" stroke="#eee"/>
+
+    <!-- Week labels -->
+    <text x="210" y="22" text-anchor="middle">W1</text>
+    <text x="275" y="22" text-anchor="middle">W2</text>
+    <text x="340" y="22" text-anchor="middle">W3</text>
+    <text x="405" y="22" text-anchor="middle">W4</text>
+    <text x="470" y="22" text-anchor="middle">W5</text>
+    <text x="535" y="22" text-anchor="middle">W6</text>
+    <text x="600" y="22" text-anchor="middle">W7</text>
+    <text x="665" y="22" text-anchor="middle">W8</text>
+
+    <!-- Bars -->
+    <text x="10" y="52">Research &amp; bias lit.</text>
+    <rect x="210" y="40" width="130" height="16" fill="#c0392b"/>
+
+    <text x="10" y="88">Game core build</text>
+    <rect x="275" y="76" width="195" height="16" fill="#c0392b"/>
+
+    <text x="10" y="124">Gamification layer</text>
+    <rect x="405" y="112" width="195" height="16" fill="#ff6b00"/>
+
+    <text x="10" y="160">NPC &amp; level content</text>
+    <rect x="340" y="148" width="130" height="16" fill="#ff6b00"/>
+
+    <text x="10" y="196">Internal testing</text>
+    <rect x="535" y="184" width="130" height="16" fill="#b0413e"/>
+
+    <text x="10" y="232">Report writing</text>
+    <rect x="470" y="220" width="195" height="16" fill="#7a7a7a"/>
+
+    <text x="10" y="268">Review &amp; submit</text>
+    <rect x="600" y="256" width="65" height="16" fill="#7a7a7a"/>
+  </g>
+</svg>
+<figcaption>Figure 4. Project plan across eight weeks. The gamification layer was added after a working game existed, and report writing overlapped with the testing phase.</figcaption>
+</figure>
+
+<!-- ═══════════════════════════════════════════════════════════
+     11. CONCLUSION
+═══════════════════════════════════════════════════════════ -->
+<h2>11. Conclusion</h2>
+<p>A browser-based civic investigation platformer was built, and a gamification layer consisting of eight techniques drawn from the behavioural literature was added to it. Each technique was matched to a named cognitive bias and implemented as a working mechanic: the extinction burst drives daily return through manufactured loss aversion; the affect heuristic raises the emotional weight of evidence collection through cutscene framing; the reversed bystander effect concentrates civic responsibility on the individual player; the self-fulfilling prophecy loop deepens the player's identity as an investigator; the learned helplessness countermeasure keeps failure from producing disengagement; and the peak experience cinematic anchors each completed case in a strongly positive memory.</p>
+<p>The work also revealed the limit at which these techniques require ethical care. The same mechanics that sustain civic engagement, when they are working as intended, also produce the kind of anxious compulsion that a tester described when their case file started to grey out. That is not a failure of the design. It is the design working. The distinction between engagement and compulsion is not a line that can be drawn once and held. It must be revisited with each new mechanic, each new notification, and each new pressure added to the loop. Parda Faas, by placing its gamification inside a civic education context, adds a further layer to this: is it acceptable to use psychologically coercive mechanics when the purpose is to teach people about corruption? The group's view is that the acceptability depends on transparency, and that this report, by naming every technique and every bias, is itself an act of that transparency.</p>
+<p>The second report will extend this work to the question of monetisation, where the tension between engagement and extraction is harder to resolve with honesty alone.</p>
+
+<!-- ═══════════════════════════════════════════════════════════
+     12. REFERENCES
+═══════════════════════════════════════════════════════════ -->
+<h2>12. References</h2>
+<p style="font-family:'Segoe UI',Arial,sans-serif;font-size:0.9rem;">
+Bargh, J. A., Chen, M. and Burrows, L. (1996) Automaticity of social behavior: Direct effects of trait construct and stereotype activation on action. <em>Journal of Personality and Social Psychology</em>, 71(2), pp. 230–244.<br><br>
+
+Cialdini, R. B. (2001) <em>Influence: Science and Practice</em>. 4th ed. Allyn &amp; Bacon.<br><br>
+
+Csikszentmihalyi, M. (1990) <em>Flow: The Psychology of Optimal Experience</em>. Harper and Row.<br><br>
+
+Darley, J. M. and Latané, B. (1968) Bystander intervention in emergencies: Diffusion of responsibility. <em>Journal of Personality and Social Psychology</em>, 8(4), pp. 377–383.<br><br>
+
+Deterding, S., Dixon, D., Khaled, R. and Nacke, L. (2011) From game design elements to gamefulness: Defining gamification. <em>Proceedings of the 15th International Academic MindTrek Conference</em>, pp. 9–15.<br><br>
+
+Gilovich, T., Medvec, V. H. and Savitsky, K. (2000) The spotlight effect in social judgment: An egocentric bias in estimates of the salience of one's own actions and appearance. <em>Journal of Personality and Social Psychology</em>, 78(2), pp. 211–222.<br><br>
+
+Kahneman, D. (2011) <em>Thinking, Fast and Slow</em>. Farrar, Straus and Giroux.<br><br>
+
+Merton, R. K. (1948) The self-fulfilling prophecy. <em>The Antioch Review</em>, 8(2), pp. 193–210.<br><br>
+
+Seligman, M. E. P. (1972) Learned helplessness. <em>Annual Review of Medicine</em>, 23(1), pp. 407–412.<br><br>
+
+Skinner, B. F. (1953) <em>Science and Human Behavior</em>. Macmillan.<br><br>
+
+Slovic, P., Finucane, M. L., Peters, E. and MacGregor, D. G. (2007) The affect heuristic. <em>European Journal of Operational Research</em>, 177(3), pp. 1333–1352.<br><br>
+
+Tversky, A. and Kahneman, D. (1991) Loss aversion in riskless choice: A reference-dependent model. <em>The Quarterly Journal of Economics</em>, 106(4), pp. 1039–1061.<br><br>
+
+Zichermann, G. and Cunningham, C. (2011) <em>Gamification by Design</em>. O'Reilly Media.<br><br>
+
+[Add any additional sources used by the group in the agreed citation style.]
+</p>
+
+</div>
+</body>
+</html>
